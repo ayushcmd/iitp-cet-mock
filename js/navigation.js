@@ -25,6 +25,10 @@ function initMobileDrawer() {
     backdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
     toggleBtn.setAttribute('aria-expanded', 'true');
+    // Move focus inside drawer for accessibility
+    if (closeBtn) {
+      setTimeout(() => closeBtn.focus(), 50);
+    }
   }
 
   function closeDrawer() {
@@ -32,6 +36,8 @@ function initMobileDrawer() {
     backdrop.classList.remove('active');
     document.body.style.overflow = '';
     toggleBtn.setAttribute('aria-expanded', 'false');
+    // Return focus back to toggle button
+    toggleBtn.focus();
   }
 
   toggleBtn.addEventListener('click', openDrawer);
