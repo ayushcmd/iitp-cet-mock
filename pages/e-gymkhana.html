@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Gymkhana | Centre for Educational Technology, IIT Patna</title>
+  
+  <meta name="description" content="Unofficial educational replica of the IIT Patna E-Gymkhana portal, digital student activities, and extracurricular engagement.">
+  <link rel="icon" type="image/png" href="../assets/images/iitp-seal.png">
+
+  <!-- Google Fonts: Source Sans Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+  <!-- Core Reusable Stylesheets -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Site-Wide Unofficial Educational Replica Disclaimer -->
+  <aside class="replica-disclaimer" role="alert" aria-label="Educational replica notice">
+    <div class="container replica-disclaimer-inner">
+      <span class="disclaimer-badge">⚠️ Educational Replica Notice:</span>
+      <span class="disclaimer-text">
+        This is an unofficial educational project. Not affiliated with or endorsed by IIT Patna. For official institutional information, visit
+        <a href="https://cet.iitp.ac.in/" target="_blank" rel="noopener">cet.iitp.ac.in</a>.
+      </span>
+    </div>
+  </aside>
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader-spinner">
+      <img src="../assets/images/iitp-seal.png" alt="Loading Seal" class="preloader-seal">
+    </div>
+    <p class="preloader-text">LOADING E-GYMKHANA...</p>
+  </div>
+
+  <!-- Reusable Site Header & Navigation Bar -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      
+      <!-- Brand Emblem & Bilingual Title -->
+      <a href="../index.html" class="brand-link" aria-label="CET IIT Patna Home">
+        <img src="../assets/images/logo.png" alt="Centre for Educational Technology - IIT Patna" class="brand-logo" width="320" height="60">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu" role="menubar">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link" role="menuitem">About</a>
+          </li>
+
+          <!-- Announcements Dropdown -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Announcements <span class="caret" aria-hidden="true">▼</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="announcements/flyer.html" class="dropdown-link" role="menuitem">Flyer</a></li>
+              <li><a href="announcements/news.html" class="dropdown-link" role="menuitem">News</a></li>
+              <li><a href="announcements/placement.html" class="dropdown-link" role="menuitem">Technology Club &amp; Internship - Placement Cell</a></li>
+            </ul>
+          </li>
+
+          <!-- Admissions Dropdown -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Admissions <span class="caret" aria-hidden="true">▼</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="admissions/eligibility.html" class="dropdown-link" role="menuitem">Eligibility</a></li>
+              <li><a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="dropdown-link" role="menuitem">Apply Form ↗</a></li>
+            </ul>
+          </li>
+
+          <!-- Academics Dropdown with Program Flyout -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Academics <span class="caret" aria-hidden="true">▼</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="academics/academic-calendar.html" class="dropdown-link" role="menuitem">Academic Calendar</a></li>
+              <li><a href="academics/evaluation-scheme.html" class="dropdown-link" role="menuitem">Evaluation Scheme</a></li>
+              <li><a href="academics/holiday-list.html" class="dropdown-link" role="menuitem">Holiday List</a></li>
+              
+              <!-- Nested Program Flyout -->
+              <li class="dropdown-item">
+                <a href="academics/programs.html" class="dropdown-link" role="menuitem">
+                  Program ▶
+                </a>
+                <ul class="nested-dropdown-menu" role="menu">
+                  <li><a href="academics/programs.html#btech-aids" class="dropdown-link">B.Tech AI &amp; Data Science</a></li>
+                  <li><a href="academics/programs.html#btech-cse" class="dropdown-link">B.Tech Computer Science</a></li>
+                  <li><a href="academics/programs.html#mtech-aidse" class="dropdown-link">Executive M.Tech in AI &amp; DSE</a></li>
+                  <li><a href="academics/programs.html#bba" class="dropdown-link">BBA</a></li>
+                </ul>
+              </li>
+
+              <li><a href="academics/time-table.html" class="dropdown-link" role="menuitem">Time Table</a></li>
+              <li><a href="academics/re-exam-schedule.html" class="dropdown-link" role="menuitem">UG - Re - Exam Schedule</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="faculty.html" class="nav-link">Faculty</a>
+          </li>
+          <li class="nav-item">
+            <a href="online-classes.html" class="nav-link">MOODLE</a>
+          </li>
+          <li class="nav-item nav-cta">
+            <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="nav-link">Apply Now</a>
+          </li>
+          <li class="nav-item active">
+            <a href="e-gymkhana.html" class="nav-link" aria-current="page">E-Gymkhana</a>
+          </li>
+          <li class="nav-item">
+            <a href="bonafide-application.html" class="nav-link">Bonafide</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-toggle" aria-label="Open Mobile Menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg class="hamburger-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M16 132h416c8.8 0 16-7.2 16-16V76c0-8.8-7.2-16-16-16H16C7.2 60 0 67.2 0 76v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="mobile-drawer-backdrop" aria-hidden="true"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <img src="../assets/images/logo.png" alt="CET IIT Patna" class="mobile-drawer-logo">
+      <button class="mobile-drawer-close" aria-label="Close Mobile Menu">
+        <svg viewBox="0 0 352 512" aria-hidden="true"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/></svg>
+      </button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="../index.html" class="mobile-nav-link">Home</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="about.html" class="mobile-nav-link">About</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="#" class="mobile-nav-link">Announcements</a>
+            <button class="mobile-submenu-toggle" aria-label="Toggle Announcements sub-menu" aria-expanded="false">
+              <svg viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+            </button>
+          </div>
+          <div class="mobile-submenu">
+            <a href="announcements/flyer.html" class="mobile-submenu-link">Flyer</a>
+            <a href="announcements/news.html" class="mobile-submenu-link">News</a>
+            <a href="announcements/placement.html" class="mobile-submenu-link">Technology Club &amp; Placement Cell</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="#" class="mobile-nav-link">Admissions</a>
+            <button class="mobile-submenu-toggle" aria-label="Toggle Admissions sub-menu" aria-expanded="false">
+              <svg viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+            </button>
+          </div>
+          <div class="mobile-submenu">
+            <a href="admissions/eligibility.html" class="mobile-submenu-link">Eligibility</a>
+            <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="mobile-submenu-link">Apply Form ↗</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="#" class="mobile-nav-link">Academics</a>
+            <button class="mobile-submenu-toggle" aria-label="Toggle Academics sub-menu" aria-expanded="false">
+              <svg viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+            </button>
+          </div>
+          <div class="mobile-submenu">
+            <a href="academics/academic-calendar.html" class="mobile-submenu-link">Academic Calendar</a>
+            <a href="academics/evaluation-scheme.html" class="mobile-submenu-link">Evaluation Scheme</a>
+            <a href="academics/holiday-list.html" class="mobile-submenu-link">Holiday List</a>
+            <a href="academics/programs.html" class="mobile-submenu-link">All Programs</a>
+            <a href="academics/time-table.html" class="mobile-submenu-link">Time Table</a>
+            <a href="academics/re-exam-schedule.html" class="mobile-submenu-link">UG Re-Exam Schedule</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="faculty.html" class="mobile-nav-link">Faculty</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="online-classes.html" class="mobile-nav-link">MOODLE</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="mobile-nav-link">Apply Now</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item active">
+          <div class="mobile-nav-link-row">
+            <a href="e-gymkhana.html" class="mobile-nav-link" aria-current="page">E-Gymkhana</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="bonafide-application.html" class="mobile-nav-link">Bonafide</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Breadcrumbs Bar -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">&gt;</li>
+        <li class="breadcrumb-item active" aria-current="page">E-Gymkhana</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Main Content Layout (Article + Sidebar) -->
+  <main class="page-content" id="mainContent">
+    <div class="container">
+      <div class="content-grid">
+
+        <!-- Left Main Content Column -->
+        <article class="content-main" aria-label="E-Gymkhana">
+          
+          <header class="page-header-block" style="margin-bottom: 1.5rem;">
+            <h1 class="page-title" style="font-size: 1.85rem; font-weight: 700; color: var(--color-brand-navy-dark); margin-bottom: 0.5rem;">
+              E-Gymkhana
+            </h1>
+            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">
+              Digital platform for student governance, clubs, societies, and extracurricular life at IIT Patna
+            </p>
+          </header>
+
+          <!-- Safe Educational Replica Advisory -->
+          <div style="background-color: #eff6ff; border-left: 4px solid #2563eb; padding: 1.15rem 1.35rem; border-radius: 6px; margin-bottom: 2rem;">
+            <p style="font-size: 0.95rem; color: #1e40af; margin: 0; line-height: 1.6;">
+              <strong>Educational Replica Notice:</strong> This page replicates the live IIT Patna CET E-Gymkhana portal status. The official portal is currently in active preparation by IIT Patna System Administration.
+            </p>
+          </div>
+
+          <!-- Hero Coming Soon Box (Authentic Live Status) -->
+          <div class="gymkhana-hero-box">
+            <span class="gymkhana-status-badge">
+              Coming Soon !!
+            </span>
+            <h2 class="gymkhana-hero-title">
+              Digital E-Gymkhana Under Preparation
+            </h2>
+            <p class="gymkhana-hero-subtitle">
+              The Centre for Educational Technology is developing a dedicated digital ecosystem to connect online and hybrid students with IIT Patna's vibrant student governance, cultural festivals, sports, and technical societies.
+            </p>
+          </div>
+
+          <!-- Student Governance & Society Overview -->
+          <div style="margin-top: 2rem;">
+            <h3 style="font-size: 1.4rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+              Students' Gymkhana at IIT Patna
+            </h3>
+            <p style="font-size: 0.95rem; color: #475569; line-height: 1.65; margin-bottom: 1.5rem;">
+              The Students' Gymkhana at IIT Patna is the apex governing body responsible for fostering holistic student development across cultural, technical, sports, and social dimensions. When operational, the E-Gymkhana portal will provide digital infrastructure for:
+            </p>
+
+            <div class="gymkhana-grid">
+
+              <!-- Card 1: Technical Affairs -->
+              <div class="gymkhana-card">
+                <span class="gymkhana-card-icon" aria-hidden="true">💻</span>
+                <h4 class="gymkhana-card-title">Technical Council</h4>
+                <p class="gymkhana-card-desc">
+                  Workshops, national hackathons, coding contests, robotics competitions, and collaborative open-source projects hosted by technical clubs.
+                </p>
+              </div>
+
+              <!-- Card 2: Cultural Affairs -->
+              <div class="gymkhana-card">
+                <span class="gymkhana-card-icon" aria-hidden="true">🎭</span>
+                <h4 class="gymkhana-card-title">Cultural Council</h4>
+                <p class="gymkhana-card-desc">
+                  Music, dramatics, visual arts, literature, debating, and annual campus celebrations including Anwesha, the premier socio-cultural festival.
+                </p>
+              </div>
+
+              <!-- Card 3: Sports Affairs -->
+              <div class="gymkhana-card">
+                <span class="gymkhana-card-icon" aria-hidden="true">🏆</span>
+                <h4 class="gymkhana-card-title">Sports Council</h4>
+                <p class="gymkhana-card-desc">
+                  Athletics, intramural leagues, yoga sessions, fitness challenges, and collegiate representation in the prestigious Inter-IIT Sports Meet.
+                </p>
+              </div>
+
+              <!-- Card 4: Welfare & Mentorship -->
+              <div class="gymkhana-card">
+                <span class="gymkhana-card-icon" aria-hidden="true">🤝</span>
+                <h4 class="gymkhana-card-title">Student Welfare</h4>
+                <p class="gymkhana-card-desc">
+                  Peer-to-peer mentoring programs, academic counseling, mental well-being initiatives, and onboarding support for remote learners.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Information for Current Students -->
+          <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #042c53; margin-bottom: 0.5rem;">
+              Stay Connected
+            </h3>
+            <p style="font-size: 0.925rem; color: #475569; line-height: 1.6; margin: 0;">
+              Announcements regarding club inductions, elections, and digital activities will be published on the CET Notice Board and broadcasted via the official student email directory. For inquiries, reach out to the Academic Section, Admin Block 3rd Floor, IIT Patna.
+            </p>
+          </div>
+
+        </article>
+
+        <!-- Right Notice Sidebar Column -->
+        <aside class="content-sidebar" aria-label="Notices and Circulars">
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <h3 class="notice-card-title">Notice</h3>
+            </div>
+            <ul class="notice-list">
+              <li class="notice-item">
+                <a href="academic-service-charges.html" class="notice-link">
+                  <span>📄</span> Academic Service Charges
+                </a>
+              </li>
+              <li class="notice-item">
+                <a href="academics/re-exam-schedule.html" class="notice-link">
+                  <span>📝</span> Quiz - II Schedule
+                </a>
+              </li>
+              <li class="notice-item">
+                <a href="admission-notice.html" class="notice-link">
+                  <span>🎓</span> Admission Autumn 2026
+                </a>
+              </li>
+              <li class="notice-item">
+                <a href="online-classes.html" class="notice-link">
+                  <span>💻</span> Moodle Portal Information
+                </a>
+              </li>
+              <li class="notice-item">
+                <a href="academics/holiday-list.html" class="notice-link">
+                  <span>📅</span> Holidays List
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Reusable Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <img src="../assets/images/footer-logo.png" alt="Centre for Educational Technology - IIT Patna" class="footer-logo">
+        <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;">Centre for Educational Technology</h4>
+        <p style="color: #e2e8f0; font-size: 0.875rem; line-height: 1.5;">
+          Academic Section, Admin Block 3rd Floor, Room No. 301<br>
+          IIT Patna, Bihta-801106, Bihar, India
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-list">
+          <li class="footer-list-item"><a href="about.html">About CET</a></li>
+          <li class="footer-list-item"><a href="faculty.html">Faculty Directory</a></li>
+          <li class="footer-list-item"><a href="online-classes.html">MOODLE Portal</a></li>
+          <li class="footer-list-item"><a href="announcements/flyer.html">Course Flyers</a></li>
+          <li class="footer-list-item"><a href="announcements/news.html">CET in Media</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Academics</h4>
+        <ul class="footer-list">
+          <li class="footer-list-item"><a href="academics/time-table.html">Time Table</a></li>
+          <li class="footer-list-item"><a href="academics/academic-calendar.html">Academic Calendar</a></li>
+          <li class="footer-list-item"><a href="admissions/eligibility.html">Eligibility Criteria</a></li>
+          <li class="footer-list-item"><a href="academic-service-charges.html">Academic Service Charges</a></li>
+          <li class="footer-list-item"><a href="academics/holiday-list.html">Holiday List</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright">
+          &copy; CET IIT Patna 2026 | Unofficial Educational Replica | Designed &amp; Maintained for Learning by ayushcmd
+        </p>
+        <p class="footer-disclaimer-note">
+          Strictly for educational and research purposes. Official portal: <a href="https://cet.iitp.ac.in/" target="_blank" rel="noopener">cet.iitp.ac.in</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+    <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+  </button>
+
+  <!-- Reusable Scripts -->
+  <script src="../js/navigation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
