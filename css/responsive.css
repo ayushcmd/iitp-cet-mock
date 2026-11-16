@@ -372,3 +372,47 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Batch 3 Mobile Refinements */
+@media (max-width: 768px) {
+  .moodle-portal-container {
+    padding: 1.5rem 1.25rem;
+  }
+  .moodle-portal-title {
+    font-size: 1.6rem;
+  }
+  .moodle-faq-title {
+    font-size: 1.35rem;
+  }
+  .bonafide-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .bonafide-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .gymkhana-hero-box {
+    padding: 2.25rem 1.25rem;
+  }
+  .gymkhana-hero-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .moodle-portal-container {
+    padding: 1.25rem 0.85rem;
+  }
+  .moodle-portal-title {
+    font-size: 1.35rem;
+  }
+  .bonafide-title {
+    font-size: 1.4rem;
+  }
+  .admission-urgent-banner {
+    padding: 1.25rem 1rem;
+  }
+  .admission-urgent-title {
+    font-size: 1.2rem;
+  }
+}
