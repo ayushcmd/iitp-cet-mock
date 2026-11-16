@@ -96,7 +96,7 @@ iitp-cet-mock/
 - [x] Verify across desktop (1440px), tablet (768px), and mobile (390px).
 - [x] **Approval Checkpoint 3**: Present visual comparison, commit, and push Phase 3 to `master`.
 
-### Phase 4 — All Public Internal Pages (In Progress: Batches 1 & 2 Complete)
+### Phase 4 — All Public Internal Pages (Completed: Batches 1, 2, & 3 Complete)
 - **Batch 1 (Academic & Program Pages) — Completed & Verified**:
   - [x] `pages/academics/academic-calendar.html`
   - [x] `pages/academics/holiday-list.html`
@@ -112,13 +112,13 @@ iitp-cet-mock/
   - [x] `pages/announcements/flyer.html`
   - [x] `pages/announcements/news.html`
   - [x] `pages/announcements/placement.html`
-- **Batch 3 (Portals & Student Services) — Planned Next**:
-  - [ ] `pages/online-classes.html` (Moodle LMS)
-  - [ ] `pages/bonafide-application.html` (Read-only informational mock)
-  - [ ] `pages/admission-notice.html`
-  - [ ] `pages/e-gymkhana.html`
-- Verify relative link integrity across all pages.
-- **Approval Checkpoint 4**: Review internal pages across batches.
+- **Batch 3 (Portals & Student Services) — Completed & Verified**:
+  - [x] `pages/online-classes.html` (Moodle LMS)
+  - [x] `pages/bonafide-application.html` (Read-only informational mock)
+  - [x] `pages/admission-notice.html`
+  - [x] `pages/e-gymkhana.html`
+- [x] Verify relative link integrity across all 18 pages (1,374 links audited, 0 broken).
+- [x] **Approval Checkpoint 4**: Review internal pages across batches and complete Phase 4 PR.
 
 ### Phase 5 — Testing and Quality Assurance
 - Responsive viewport audits (1440px, 768px, 390px).

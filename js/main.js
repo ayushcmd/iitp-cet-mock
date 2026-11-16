@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initBackToTop();
+  initAccordions();
   logDisclaimer();
 });
 
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * Handles the animated preloader, smoothly fading it out once the page assets load.
  */
 function initPreloader() {
-  const preloader = document.getElementById('astroid-preloader');
+  const preloader = document.getElementById('astroid-preloader') || document.getElementById('preloader');
   if (!preloader) return;
 
   function fadeOut() {
@@ -38,7 +39,7 @@ function initPreloader() {
  * Handles the floating Back-to-Top button behavior.
  */
 function initBackToTop() {
-  const backToTopBtn = document.getElementById('astroid-backtotop');
+  const backToTopBtn = document.getElementById('astroid-backtotop') || document.getElementById('backToTop');
   if (!backToTopBtn) return;
 
   window.addEventListener('scroll', () => {
@@ -54,6 +55,63 @@ function initBackToTop() {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
+    });
+  });
+}
+
+/**
+ * Handles interactive accordion collapses (used in Moodle FAQ and other collapsibles).
+ */
+function initAccordions() {
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+
+  accordionButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetSelector = btn.getAttribute('data-bs-target') || btn.getAttribute('data-target');
+      let targetCollapse = null;
+
+      if (targetSelector) {
+        targetCollapse = document.querySelector(targetSelector);
+      } else {
+        const item = btn.closest('.accordion-item');
+        if (item) {
+          targetCollapse = item.querySelector('.accordion-collapse');
+        }
+      }
+
+      if (!targetCollapse) return;
+
+      const isCurrentlyOpen = targetCollapse.classList.contains('show');
+      const parentAccordion = btn.closest('.accordion');
+
+      // If parent enforces single open item (accordion behavior)
+      if (parentAccordion) {
+        const openCollapses = parentAccordion.querySelectorAll('.accordion-collapse.show');
+        const openButtons = parentAccordion.querySelectorAll('.accordion-button:not(.collapsed)');
+
+        openCollapses.forEach((c) => {
+          if (c !== targetCollapse) {
+            c.classList.remove('show');
+          }
+        });
+        openButtons.forEach((b) => {
+          if (b !== btn) {
+            b.classList.add('collapsed');
+            b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      if (isCurrentlyOpen) {
+        targetCollapse.classList.remove('show');
+        btn.classList.add('collapsed');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        targetCollapse.classList.add('show');
+        btn.classList.remove('collapsed');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 }

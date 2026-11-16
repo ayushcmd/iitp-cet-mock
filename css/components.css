@@ -1041,3 +1041,499 @@
   transform: translateY(-1px);
 }
 
+
+/* ==========================================================================
+   14. Batch 3 Components: Accordions, MOODLE, Bonafide, Admission, E-Gymkhana
+   ========================================================================== */
+
+/* Vanilla Interactive Accordions */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.accordion-item {
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.accordion-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.accordion-header {
+  margin: 0;
+  padding: 0;
+}
+
+.accordion-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.accordion-button::after {
+  content: '?';
+  font-size: 0.8rem;
+  color: #64748b;
+  transition: transform 0.25s ease;
+  margin-left: 0.75rem;
+  flex-shrink: 0;
+}
+
+.accordion-button.collapsed::after {
+  transform: rotate(-90deg);
+}
+
+.accordion-button:not(.collapsed) {
+  background: #f8fafc;
+  color: var(--color-brand-accent);
+}
+
+.accordion-collapse {
+  display: none;
+}
+
+.accordion-collapse.show {
+  display: block;
+}
+
+.accordion-body {
+  padding: 1rem 1.25rem 1.25rem 1.25rem;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.65;
+  border-top: 1px solid #f1f5f9;
+  background: #ffffff;
+}
+
+/* Border Accent Helpers for Accordion */
+.border-start {
+  border-left-width: 4px !important;
+  border-left-style: solid !important;
+}
+
+.border-primary { border-left-color: #0d6efd !important; }
+.border-secondary { border-left-color: #6c757d !important; }
+.border-danger { border-left-color: #dc3545 !important; }
+.border-success { border-left-color: #198754 !important; }
+.border-warning { border-left-color: #f59e0b !important; }
+.border-info { border-left-color: #0dcaf0 !important; }
+.border-dark { border-left-color: #212529 !important; }
+.border-purple { border-left-color: #6f42c1 !important; }
+
+/* MOODLE Portal Page Components */
+.moodle-portal-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  padding: 2.25rem;
+  border: 1px solid #eef2f6;
+  margin-bottom: 2rem;
+}
+
+.moodle-header-block {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.moodle-portal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #042c53;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.moodle-portal-subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.moodle-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.moodle-feature-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #0d6efd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.moodle-feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.moodle-feature-card.card-guidelines {
+  border-left-color: #198754;
+}
+
+.moodle-feature-card.card-support {
+  border-left-color: #f59e0b;
+}
+
+.moodle-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.moodle-card-desc {
+  font-size: 0.925rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.moodle-card-link {
+  color: #0284c7;
+  font-weight: 600;
+  text-decoration: underline;
+  word-break: break-all;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.moodle-card-link:hover {
+  color: #0369a1;
+}
+
+.moodle-notice-box {
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #92400e;
+}
+
+.moodle-faq-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.moodle-faq-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.moodle-faq-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.moodle-faq-tip {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 1.75rem;
+  color: #166534;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Bonafide Application Page Components */
+.bonafide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.bonafide-card {
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+.bonafide-instructions-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.bonafide-documents-card {
+  background: #f0f8ff;
+  border: 1px solid #dbeafe;
+}
+
+.bonafide-title {
+  color: #4b0082;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.bonafide-intro {
+  font-size: 1rem;
+  color: #334155;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.bonafide-instruction-list {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: #334155;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.bonafide-instruction-list li {
+  margin-bottom: 0.5rem;
+}
+
+.bonafide-alert {
+  color: #b91c1c;
+  font-weight: 700;
+  font-style: italic;
+  background: #fef2f2;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  border-left: 4px solid #ef4444;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.bonafide-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 14px 36px;
+  background: linear-gradient(45deg, #6a0dad, #8a2be2);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(106, 13, 173, 0.3);
+  transition: all 0.2s ease;
+}
+
+.bonafide-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(106, 13, 173, 0.4);
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.bonafide-doc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+}
+
+.bonafide-doc-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px dashed #cbd5e1;
+  font-size: 0.95rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.bonafide-doc-item:last-child {
+  border-bottom: none;
+}
+
+.bonafide-doc-icon {
+  color: #6a0dad;
+  font-size: 1.1rem;
+}
+
+/* Admission Notice Components */
+.admission-announcement-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.75rem;
+}
+
+.admission-urgent-banner {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 5px solid #ef4444;
+  border-radius: 8px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.admission-urgent-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #991b1b;
+  margin-bottom: 0.75rem;
+}
+
+.admission-urgent-desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #374151;
+  margin: 0;
+}
+
+.admission-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.admission-archive-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admission-archive-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.admission-archive-tag {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+/* E-Gymkhana Page Components */
+.gymkhana-hero-box {
+  background: linear-gradient(135deg, #042c53 0%, #003360 60%, #0284c7 100%);
+  border-radius: 12px;
+  padding: 3.5rem 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2.25rem;
+  box-shadow: 0 8px 24px rgba(4, 44, 83, 0.15);
+}
+
+.gymkhana-status-badge {
+  display: inline-block;
+  background: #f59e0b;
+  color: #000000;
+  font-size: 1.15rem;
+  font-weight: 800;
+  padding: 0.5rem 1.75rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+
+.gymkhana-hero-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.gymkhana-hero-subtitle {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.gymkhana-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.gymkhana-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gymkhana-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.gymkhana-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.gymkhana-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #042c53;
+  margin-bottom: 0.5rem;
+}
+
+.gymkhana-card-desc {
+  font-size: 0.925rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
