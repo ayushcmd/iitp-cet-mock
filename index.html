@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CET::IIT Patna | Centre for Educational Technology</title>
+  
+  <!-- SEO & Social Metadata -->
+  <meta name="description" content="Official replica of the Centre for Educational Technology (CET) at IIT Patna. Empowering education through technology with NEP 2020-aligned hybrid and online academic programs.">
+  <meta name="keywords" content="IIT Patna, CET, Centre for Educational Technology, B.Tech AI, BBA, MS, BS, NEP 2020, Computer Science, Data Analytics, Cybersecurity">
+  <link rel="icon" type="image/png" href="assets/images/iitp-seal.png">
+
+  <!-- Google Fonts: Source Sans Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Animated Preloader (Matches Original IIT Patna Rotating Seal) -->
+  <div id="astroid-preloader" aria-hidden="true">
+    <img src="assets/images/iitp-seal.png" alt="IIT Patna Seal" class="preloader-spinner">
+    <div class="preloader-text">Centre for Educational Technology</div>
+  </div>
+
+  <!-- Site-Wide Educational Replica Disclaimer Banner -->
+  <aside class="replica-disclaimer" role="note">
+    <span>⚠️ <strong>Educational Replica Notice:</strong> This is an unofficial educational project created for frontend learning. Not affiliated with or endorsed by IIT Patna. For official institutional information, visit <a href="https://cet.iitp.ac.in/" target="_blank" rel="noopener">cet.iitp.ac.in</a>.</span>
+  </aside>
+
+  <!-- Reusable Site Header & Brand Bar -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand-wrapper">
+        <a href="index.html" class="brand-logo-link" aria-label="CET IIT Patna Home">
+          <img src="assets/images/logo.png" alt="Centre for Educational Technology - IIT Patna" class="brand-logo-img">
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item active">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/about.html" class="nav-link">About</a>
+          </li>
+          
+          <!-- Announcements Dropdown -->
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              Announcements
+              <svg class="caret-icon" viewBox="0 0 320 512" aria-hidden="true"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="pages/announcements/flyer.html" class="dropdown-link" role="menuitem">Flyer</a></li>
+              <li><a href="pages/announcements/news.html" class="dropdown-link" role="menuitem">News</a></li>
+              <li><a href="pages/announcements/placement.html" class="dropdown-link" role="menuitem">Technology Club &amp; Placement Cell</a></li>
+            </ul>
+          </li>
+
+          <!-- Admissions Dropdown -->
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              Admissions
+              <svg class="caret-icon" viewBox="0 0 320 512" aria-hidden="true"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="pages/admissions/eligibility.html" class="dropdown-link" role="menuitem">Eligibility</a></li>
+              <li><a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="dropdown-link" role="menuitem">Apply Form ↗</a></li>
+            </ul>
+          </li>
+
+          <!-- Academics Multi-Level Dropdown -->
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              Academics
+              <svg class="caret-icon" viewBox="0 0 320 512" aria-hidden="true"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="pages/academics/academic-calendar.html" class="dropdown-link" role="menuitem">Academic Calendar</a></li>
+              <li><a href="pages/academics/evaluation-scheme.html" class="dropdown-link" role="menuitem">Evaluation Scheme</a></li>
+              <li><a href="pages/academics/holiday-list.html" class="dropdown-link" role="menuitem">Holiday List</a></li>
+              
+              <!-- Nested Flyout Submenu for Program -->
+              <li class="dropdown-item">
+                <a href="pages/academics/programs.html" class="dropdown-link" role="menuitem">
+                  Program ▶
+                </a>
+                <ul class="nested-dropdown-menu" role="menu">
+                  <li><a href="pages/academics/programs.html#btech-aids" class="dropdown-link">B.Tech AI &amp; Data Science</a></li>
+                  <li><a href="pages/academics/programs.html#btech-cse" class="dropdown-link">B.Tech Computer Science</a></li>
+                  <li><a href="pages/academics/programs.html#mtech-aidse" class="dropdown-link">Executive M.Tech in AI &amp; DSE</a></li>
+                  <li><a href="pages/academics/programs.html#bba" class="dropdown-link">BBA</a></li>
+                </ul>
+              </li>
+
+              <li><a href="pages/academics/time-table.html" class="dropdown-link" role="menuitem">Time Table</a></li>
+              <li><a href="pages/academics/re-exam-schedule.html" class="dropdown-link" role="menuitem">UG - Re - Exam Schedule</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="pages/faculty.html" class="nav-link">Faculty</a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/online-classes.html" class="nav-link">MOODLE</a>
+          </li>
+          <li class="nav-item nav-cta">
+            <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="nav-link">Apply Now</a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/e-gymkhana.html" class="nav-link">E-Gymkhana</a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/bonafide-application.html" class="nav-link">Bonafide</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle Button -->
+      <button class="mobile-menu-toggle" aria-label="Open Mobile Menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg class="hamburger-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M16 132h416c8.8 0 16-7.2 16-16V76c0-8.8-7.2-16-16-16H16C7.2 60 0 67.2 0 76v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Drawer & Backdrop -->
+  <div class="mobile-drawer-backdrop" aria-hidden="true"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <img src="assets/images/logo.png" alt="CET IIT Patna" class="mobile-drawer-logo">
+      <button class="mobile-drawer-close" aria-label="Close Mobile Menu">
+        <svg viewBox="0 0 352 512" aria-hidden="true"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/></svg>
+      </button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="pages/about.html" class="mobile-nav-link">About</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="#" class="mobile-nav-link">Announcements</a>
+            <button class="mobile-submenu-toggle" aria-label="Toggle Announcements sub-menu" aria-expanded="false">
+              <svg viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+            </button>
+          </div>
+          <div class="mobile-submenu">
+            <a href="pages/announcements/flyer.html" class="mobile-submenu-link">Flyer</a>
+            <a href="pages/announcements/news.html" class="mobile-submenu-link">News</a>
+            <a href="pages/announcements/placement.html" class="mobile-submenu-link">Tech Club &amp; Placement</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="#" class="mobile-nav-link">Admissions</a>
+            <button class="mobile-submenu-toggle" aria-label="Toggle Admissions sub-menu" aria-expanded="false">
+              <svg viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+            </button>
+          </div>
+          <div class="mobile-submenu">
+            <a href="pages/admissions/eligibility.html" class="mobile-submenu-link">Eligibility</a>
+            <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="mobile-submenu-link">Apply Form ↗</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="#" class="mobile-nav-link">Academics</a>
+            <button class="mobile-submenu-toggle" aria-label="Toggle Academics sub-menu" aria-expanded="false">
+              <svg viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+            </button>
+          </div>
+          <div class="mobile-submenu">
+            <a href="pages/academics/academic-calendar.html" class="mobile-submenu-link">Academic Calendar</a>
+            <a href="pages/academics/evaluation-scheme.html" class="mobile-submenu-link">Evaluation Scheme</a>
+            <a href="pages/academics/holiday-list.html" class="mobile-submenu-link">Holiday List</a>
+            <a href="pages/academics/programs.html" class="mobile-submenu-link">Programs Catalog</a>
+            <a href="pages/academics/time-table.html" class="mobile-submenu-link">Time Table</a>
+            <a href="pages/academics/re-exam-schedule.html" class="mobile-submenu-link">UG Re-Exam Schedule</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="pages/faculty.html" class="mobile-nav-link">Faculty</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="pages/online-classes.html" class="mobile-nav-link">MOODLE</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="mobile-nav-link">Apply Now ↗</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="pages/e-gymkhana.html" class="mobile-nav-link">E-Gymkhana</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-link-row">
+            <a href="pages/bonafide-application.html" class="mobile-nav-link">Bonafide Application</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Marquee Announcement Ticker (Pause on Hover) -->
+  <div class="announcement-ticker" role="region" aria-label="Announcements Marquee">
+    <div class="ticker-badge">📢 Announcements:</div>
+    <div class="ticker-track-wrapper">
+      <div class="ticker-track">
+        <span class="ticker-item">🗓️ Academic Calendar for Autumn 2025</span>
+        <span class="ticker-item">🚀 Applications Invited Year-Round | <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener">Apply Now</a></span>
+        <span class="ticker-item">🎓 Admission Open For Autumn 2026 Session</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Hero Section (Gradient & Glassmorphism) -->
+  <section class="hero-section" aria-label="Hero Banner">
+    <div class="container">
+      <div class="hero-glass-card">
+        <h1 class="hero-title">Centre for Educational Technology</h1>
+        <p class="hero-subtitle">Empowering Education through Technology @ IIT Patna</p>
+        <div class="hero-cta-group">
+          <a class="btn-hero-light" href="pages/announcements/flyer.html">
+            🎓 Admission Open For Autumn 2026 Session
+          </a>
+          <a class="btn-hero-outline" href="pages/academics/academic-calendar.html">
+            🎓 Academic Calendar for Autumn 2026 
+            <span class="badge-blinking-new">NEW</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction, Quick Stats & Notice Sidebar Section -->
+  <section class="section-padding" aria-label="Introduction and Notices">
+    <div class="container">
+      <div class="two-column-layout">
+        
+        <!-- Left Main Introduction Column -->
+        <div class="intro-main-col">
+          <p class="section-eyebrow-title" style="color: var(--color-brand-accent); font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">
+            IIT Patna — Centre for Educational Technology
+          </p>
+          <h2 style="font-size: clamp(1.4rem, 2.5vw, 1.85rem); line-height: 1.35; margin-bottom: 0.85rem; color: #1a1a2e;">
+            Learn. Build. Lead. NEP 2020-aligned programs designed to build future-ready skills with flexibility, industry relevance, and academic excellence.
+          </h2>
+
+          <div class="intro-cta-row">
+            <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="btn-intro-apply">
+              🚀 Apply for Autumn 2026
+            </a>
+            <a href="#cet-programs" class="btn-intro-browse">
+              📚 Browse programs
+            </a>
+          </div>
+
+          <!-- Quick Stats Row (4 Cards) -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">9+</div>
+              <div class="stat-label">Degree programs</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">2</div>
+              <div class="stat-label">Tech specializations</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">2×</div>
+              <div class="stat-label">Intakes per year</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">IIT</div>
+              <div class="stat-label">Senate approved</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Notice Board Sidebar Column -->
+        <aside class="intro-sidebar-col" aria-label="Notices and Circulars">
+          <div class="notice-card">
+            <div class="notice-card-header">
+              <h3 class="notice-card-title">Notice</h3>
+            </div>
+            <ul class="notice-list">
+              <li class="notice-item">
+                <a href="pages/academic-service-charges.html" class="notice-link">
+                  <span>📄</span> Academic Service Charges
+                </a>
+              </li>
+              <li class="notice-item">
+                <a href="pages/academics/re-exam-schedule.html" class="notice-link">
+                  <span>📝</span> Quiz - II Schedule (Autumn 2025 Session)
+                </a>
+              </li>
+              <li class="notice-item">
+                <a href="pages/admission-notice.html" class="notice-link">
+                  <span>🎓</span> Admission Autumn 2026
+                </a>
+              </li>
+              <li class="notice-item">
+                <a href="pages/online-classes.html" class="notice-link">
+                  <span>💻</span> Moodle Portal Information
+                </a>
+              </li>
+              <li class="notice-item">
+                <a href="pages/academics/holiday-list.html" class="notice-link">
+                  <span>🗓️</span> Holidays List
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Showcase Section with Interactive Filtering -->
+  <section id="cet-programs" class="section-padding" style="background-color: #fafbfc; border-top: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7;" aria-label="Academic Programs">
+    <div class="container">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 24px; font-weight: 800; color: #1a1a2e; margin: 0 0 4px;">Programs</h2>
+        <p style="font-size: 14px; color: #64748b; margin: 0;">Modular, flexible pathways for undergraduate, postgraduate, and doctoral study.</p>
+      </div>
+
+      <!-- Program Category Filter Buttons -->
+      <div class="program-filter-bar" role="tablist" aria-label="Filter programs by level">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="programGrid">All programs</button>
+        <button class="filter-btn" data-filter="ug" role="tab" aria-selected="false" aria-controls="programGrid">Undergraduate</button>
+        <button class="filter-btn" data-filter="pg" role="tab" aria-selected="false" aria-controls="programGrid">Postgraduate</button>
+        <button class="filter-btn" data-filter="doc" role="tab" aria-selected="false" aria-controls="programGrid">Doctoral</button>
+      </div>
+
+      <!-- 9 Degree Program Cards Grid -->
+      <div id="programGrid" class="programs-grid" role="region" aria-live="polite">
+        
+        <!-- Card 1: BBA -->
+        <article class="program-card" data-category="ug">
+          <div>
+            <span class="program-card-badge">Undergraduate • 3 Years</span>
+            <h3 class="program-card-title">BBA</h3>
+            <p class="program-card-desc">Bachelor of Business Administration focusing on core management, finance, marketing, and leadership foundations.</p>
+          </div>
+          <a href="https://registrations.iitp-cep.in/Bba" target="_blank" rel="noopener" class="btn-card-register">
+            Register →
+          </a>
+        </article>
+
+        <!-- Card 2: BBA - MBA -->
+        <article class="program-card" data-category="ug pg">
+          <div>
+            <span class="program-card-badge">Dual Degree • 5 Years</span>
+            <h3 class="program-card-title">BBA – MBA</h3>
+            <p class="program-card-desc">Integrated Bachelor and Master of Business Administration offering seamless transition to executive management.</p>
+          </div>
+          <a href="https://registrations.iitp-cep.in/BBAMBA" target="_blank" rel="noopener" class="btn-card-register">
+            Register →
+          </a>
+        </article>
+
+        <!-- Card 3: BS (AICS / CSDA) -->
+        <article class="program-card" data-category="ug">
+          <div>
+            <span class="program-card-badge">Undergraduate • 4 Years</span>
+            <h3 class="program-card-title">BS (AICS / CSDA)</h3>
+            <p class="program-card-desc">Bachelor of Science in AI &amp; Cyber Security or Computer Science &amp; Data Analytics with hands-on labs.</p>
+          </div>
+          <a href="https://registrations.iitp-cep.in/Bs" target="_blank" rel="noopener" class="btn-card-register">
+            Register →
+          </a>
+        </article>
+
+        <!-- Card 4: BS - MS (AICS / CSDA) -->
+        <article class="program-card" data-category="ug pg">
+          <div>
+            <span class="program-card-badge">Dual Degree • 5 Years</span>
+            <h3 class="program-card-title">BS – MS (AICS / CSDA)</h3>
+            <p class="program-card-desc">Integrated Bachelor and Master of Science in cutting-edge computing, machine learning, and cybersecurity.</p>
+          </div>
+          <a href="https://registrations.iitp-cep.in/Bs-Ms" target="_blank" rel="noopener" class="btn-card-register">
+            Register →
+          </a>
+        </article>
+
+        <!-- Card 5: MS (AICS / CSDA) -->
+        <article class="program-card" data-category="pg">
+          <div>
+            <span class="program-card-badge">Postgraduate • 2 Years</span>
+            <h3 class="program-card-title">MS (AICS / CSDA)</h3>
+            <p class="program-card-desc">Master of Science designed for in-depth research and engineering in AI, deep learning, and advanced data analytics.</p>
+          </div>
+          <a href="https://registrations.iitp-cep.in/MS2" target="_blank" rel="noopener" class="btn-card-register">
+            Register →
+          </a>
+        </article>
+
+        <!-- Card 6: MBA -->
+        <article class="program-card" data-category="pg">
+          <div>
+            <span class="program-card-badge">Postgraduate • 2 Years</span>
+            <h3 class="program-card-title">MBA</h3>
+            <p class="program-card-desc">Master of Business Administration with focus on tech-enabled enterprise management and strategic operations.</p>
+          </div>
+          <a href="https://registrations.iitp-cep.in/MBA" target="_blank" rel="noopener" class="btn-card-register">
+            Register →
+          </a>
+        </article>
+
+        <!-- Card 7: MBA (Gen AI & PM) -->
+        <article class="program-card" data-category="pg">
+          <div>
+            <span class="program-card-badge">Postgraduate • 2 Years</span>
+            <h3 class="program-card-title">MBA (Gen AI &amp; PM)</h3>
+            <p class="program-card-desc">Specialized MBA integrating Generative Artificial Intelligence leadership with modern tech product management.</p>
+          </div>
+          <a href="https://registrations.iitp-cep.in/MBAAI" target="_blank" rel="noopener" class="btn-card-register">
+            Register →
+          </a>
+        </article>
+
+        <!-- Card 8: MTech (AI & DSE / CSE) -->
+        <article class="program-card" data-category="pg">
+          <div>
+            <span class="program-card-badge">Postgraduate • 2 Years</span>
+            <h3 class="program-card-title">MTech (AI &amp; DSE / CSE)</h3>
+            <p class="program-card-desc">Master of Technology for working professionals in Artificial Intelligence &amp; Data Science or Computer Science.</p>
+          </div>
+          <a href="https://registrations.iitp-cep.in/MTechAI-DSE" target="_blank" rel="noopener" class="btn-card-register">
+            Register →
+          </a>
+        </article>
+
+        <!-- Card 9: PhD -->
+        <article class="program-card" data-category="doc">
+          <div>
+            <span class="program-card-badge">Doctoral Research</span>
+            <h3 class="program-card-title">PhD</h3>
+            <p class="program-card-desc">Executive doctoral research opportunities supervised by IIT Patna faculty across computing, AI, and management.</p>
+          </div>
+          <a href="https://registrations.iitp-cep.in/PHD" target="_blank" rel="noopener" class="btn-card-register">
+            Register →
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Specializations Section (Verbatim Live Content) -->
+  <section class="tech-specs-section" aria-label="Tech Specializations">
+    <div class="container">
+      <p class="section-eyebrow-title">Tech specializations</p>
+      <p class="section-eyebrow-subtitle">Two tracks — both designed for the jobs of tomorrow</p>
+      
+      <div class="tech-specs-grid">
+        <!-- Track 1: AICS -->
+        <div class="tech-track-card">
+          <span class="badge-aics">AI &amp; Cyber Security</span>
+          <h3 class="tech-track-code">AICS</h3>
+          <ul class="tech-topic-list">
+            <li class="tech-topic-item">Machine Learning &amp; Deep Learning</li>
+            <li class="tech-topic-item">Network Security &amp; Cryptography</li>
+            <li class="tech-topic-item">Threat Intelligence</li>
+            <li class="tech-topic-item">Ethical Hacking &amp; Digital Forensics</li>
+          </ul>
+        </div>
+
+        <!-- Track 2: CSDA -->
+        <div class="tech-track-card">
+          <span class="badge-csda">CS &amp; Data Analytics</span>
+          <h3 class="tech-track-code">CSDA</h3>
+          <ul class="tech-topic-list">
+            <li class="tech-topic-item">Data Structures &amp; Algorithms</li>
+            <li class="tech-topic-item">Big Data &amp; Cloud Computing</li>
+            <li class="tech-topic-item">Business Intelligence</li>
+            <li class="tech-topic-item">Statistical Modelling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modular Learning Pathway Section (Verbatim Live Content) -->
+  <section class="pathway-section" aria-label="Modular Learning Pathway">
+    <div class="container">
+      <p class="section-eyebrow-title">Modular learning pathway</p>
+      <p class="section-eyebrow-subtitle">Exit and re-enter at any level — credentials that grow with you</p>
+      
+      <div class="pathway-wrapper">
+        <div class="pathway-step">
+          <span class="pathway-badge">Level 1</span>
+          <div class="pathway-degree">Foundation Level Certificate</div>
+          <div class="pathway-duration">2 semester</div>
+        </div>
+        <div class="pathway-arrow">›</div>
+
+        <div class="pathway-step">
+          <span class="pathway-badge">Level 2</span>
+          <div class="pathway-degree">Diploma Level Certificate</div>
+          <div class="pathway-duration">4 semesters</div>
+        </div>
+        <div class="pathway-arrow">›</div>
+
+        <div class="pathway-step">
+          <span class="pathway-badge">Level 3</span>
+          <div class="pathway-degree">B.Sc.</div>
+          <div class="pathway-duration">6 semesters</div>
+        </div>
+        <div class="pathway-arrow">›</div>
+
+        <div class="pathway-step">
+          <span class="pathway-badge">Level 4</span>
+          <div class="pathway-degree">B.S.</div>
+          <div class="pathway-duration">8 semesters</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why CET at IIT Patna? Section (Verbatim Live Content) -->
+  <section class="why-cet-section" aria-label="Why CET at IIT Patna">
+    <div class="container">
+      <p class="section-eyebrow-title" style="margin-bottom: 1rem;">Why CET at IIT Patna?</p>
+      
+      <div class="why-cet-grid">
+        <div class="why-cet-card">
+          <span class="why-cet-icon">⚡</span>
+          <div>
+            <strong class="why-cet-title">Hands-on training</strong>
+            <span class="why-cet-desc">Industry projects from day one</span>
+          </div>
+        </div>
+
+        <div class="why-cet-card">
+          <span class="why-cet-icon">🕐</span>
+          <div>
+            <strong class="why-cet-title">Flexible schedule</strong>
+            <span class="why-cet-desc">Works for working professionals too</span>
+          </div>
+        </div>
+
+        <div class="why-cet-card">
+          <span class="why-cet-icon">🎉</span>
+          <div>
+            <strong class="why-cet-title">NEP 2020 aligned</strong>
+            <span class="why-cet-desc">Government of India framework</span>
+          </div>
+        </div>
+
+        <div class="why-cet-card">
+          <span class="why-cet-icon">📅</span>
+          <div>
+            <strong class="why-cet-title">2 intakes yearly</strong>
+            <span class="why-cet-desc">July (Autumn) &amp; January (Spring)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admission Call-to-Action Banner Card (Verbatim Live Content) -->
+      <div class="admission-cta-card">
+        <div>
+          <h2 class="admission-cta-title">Applications open — Autumn 2026</h2>
+          <p class="admission-cta-desc">Admissions invited for July and January semesters. Start your IIT journey today.</p>
+        </div>
+        <a class="btn-cta-blue" href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener">
+          🚀 Apply now
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Reusable Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <!-- Footer Column 1: CET Branding & Location -->
+      <div>
+        <img src="assets/images/footer-logo.png" alt="Centre for Educational Technology - IIT Patna" class="footer-logo">
+        <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;">Centre for Educational Technology</h4>
+        <p style="color: #e2e8f0; font-size: 0.875rem; line-height: 1.5;">
+          Academic Section, Admin Block 3rd Floor, Room No. 301<br>
+          IIT Patna, Bihta-801106, Bihar, India
+        </p>
+      </div>
+
+      <!-- Footer Column 2: Quick Links -->
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-list">
+          <li class="footer-list-item"><a href="pages/about.html">About CET</a></li>
+          <li class="footer-list-item"><a href="pages/faculty.html">Faculty Directory</a></li>
+          <li class="footer-list-item"><a href="pages/online-classes.html">MOODLE Portal</a></li>
+          <li class="footer-list-item"><a href="pages/announcements/flyer.html">Course Flyers</a></li>
+          <li class="footer-list-item"><a href="pages/announcements/news.html">CET in Media</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Column 3: Academics -->
+      <div>
+        <h4 class="footer-heading">Academics</h4>
+        <ul class="footer-list">
+          <li class="footer-list-item"><a href="pages/academics/time-table.html">Time Table</a></li>
+          <li class="footer-list-item"><a href="pages/academics/academic-calendar.html">Academic Calendar</a></li>
+          <li class="footer-list-item"><a href="pages/admissions/eligibility.html">Eligibility Criteria</a></li>
+          <li class="footer-list-item"><a href="pages/academic-service-charges.html">Academic Service Charges</a></li>
+          <li class="footer-list-item"><a href="pages/academics/holiday-list.html">Holiday List</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Disclaimer -->
+    <div class="footer-bottom-bar">
+      <div class="container">
+        © CET IIT Patna 2026 | Unofficial Educational Replica | Designed &amp; Maintained for Learning by ayushcmd
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back-to-Top Button -->
+  <a href="#" id="astroid-backtotop" aria-label="Scroll Back to Top">
+    <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+  </a>
+
+  <!-- JavaScript Modules -->
+  <script src="js/navigation.js"></script>
+  <script src="js/programs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
