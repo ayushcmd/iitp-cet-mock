@@ -68,20 +68,20 @@ iitp-cet-mock/
 - [x] Create comprehensive planning documentation (`SITE_AUDIT.md`, `PAGE_INVENTORY.md`, `DESIGN_SYSTEM.md`, `ASSET_INVENTORY.md`, `IMPLEMENTATION_PLAN.md`).
 - [x] Checkpoint 1 approved with Vercel hosting & scope updates.
 
-### Phase 2 — Project Foundation (Current Phase)
+### Phase 2 — Project Foundation (Completed)
 - [x] Initialize Git repository locally; configure user name `ayushcmd` and user email `ayush_24a12res897@iitp.ac.in`.
 - [x] Set remote URL to `https://github.com/ayushcmd/iitp-cet-mock.git`.
 - [x] Download authentic public assets (`logo.png`, `iitp-seal.png`, `footer-logo.png`).
-- [ ] Implement `css/global.css` with CSS custom properties, typography, reset, and site-wide disclaimer banner.
-- [ ] Implement reusable components in `css/components.css` (header, multi-level dropdown navbar, footer, buttons, cards).
-- [ ] Implement responsive styles in `css/responsive.css` (breakpoints: 1200px, 992px, 768px, 480px).
-- [ ] Implement `js/navigation.js` and `js/main.js` (mobile offcanvas drawer, dropdown support, back-to-top, preloader).
-- [ ] Create `README.md` and `.gitignore`.
-- [ ] Perform local verification tests (using local HTTP server).
-- [ ] **Approval Checkpoint 2**: Submit Phase 2 completion report and wait for approval before building the homepage.
+- [x] Implement `css/global.css` with CSS custom properties, typography, reset, and site-wide disclaimer banner.
+- [x] Implement reusable components in `css/components.css` (header, multi-level dropdown navbar, footer, buttons, cards).
+- [x] Implement responsive styles in `css/responsive.css` (breakpoints: 1200px, 992px, 768px, 480px).
+- [x] Implement `js/navigation.js` and `js/main.js` (mobile offcanvas drawer, dropdown support, back-to-top, preloader).
+- [x] Create `README.md` and `.gitignore`.
+- [x] Perform local verification tests (using local HTTP server).
+- [x] **Approval Checkpoint 2**: Submit Phase 2 completion report and wait for approval before building the homepage.
 
-### Phase 3 — Homepage Implementation
-- Construct full `index.html`:
+### Phase 3 — Homepage Implementation (Completed)
+- [x] Construct full `index.html`:
   - Official brand header with bilingual logo and topbar.
   - Desktop multi-level navigation and mobile slide-in drawer.
   - Glassmorphic Hero section with authentic CSS gradient backdrop (`linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)`).
@@ -93,30 +93,30 @@ iitp-cet-mock/
   - Value proposition blocks ("Why CET at IIT Patna?").
   - Admissions call-to-action banner.
   - Comprehensive footer with office location, quick links, and floating back-to-top button.
-- Verify across desktop (1440px), tablet (768px), and mobile (390px).
-- **Approval Checkpoint 3**: Present visual comparison and review homepage.
+- [x] Verify across desktop (1440px), tablet (768px), and mobile (390px).
+- [x] **Approval Checkpoint 3**: Present visual comparison, commit, and push Phase 3 to `master`.
 
-### Phase 4 — All Public Internal Pages
-- **Batch 1 (Academic & Program Pages)**:
-  - `pages/academics/academic-calendar.html`
-  - `pages/academics/holiday-list.html`
-  - `pages/academics/time-table.html`
-  - `pages/academics/evaluation-scheme.html`
-  - `pages/academics/re-exam-schedule.html`
-  - `pages/academics/programs.html`
-  - `pages/admissions/eligibility.html`
-- **Batch 2 (Institutional & Announcements)**:
-  - `pages/about.html`
-  - `pages/faculty.html`
-  - `pages/academic-service-charges.html`
-  - `pages/announcements/flyer.html`
-  - `pages/announcements/news.html`
-  - `pages/announcements/placement.html`
-- **Batch 3 (Portals & Student Services)**:
-  - `pages/online-classes.html` (Moodle LMS)
-  - `pages/bonafide-application.html` (Read-only informational mock)
-  - `pages/admission-notice.html`
-  - `pages/e-gymkhana.html`
+### Phase 4 — All Public Internal Pages (In Progress: Batch 1 Complete)
+- **Batch 1 (Academic & Program Pages) — Completed & Verified**:
+  - [x] `pages/academics/academic-calendar.html`
+  - [x] `pages/academics/holiday-list.html`
+  - [x] `pages/academics/time-table.html`
+  - [x] `pages/academics/evaluation-scheme.html`
+  - [x] `pages/academics/re-exam-schedule.html`
+  - [x] `pages/academics/programs.html`
+  - [x] `pages/admissions/eligibility.html`
+- **Batch 2 (Institutional & Announcements) — Planned Next**:
+  - [ ] `pages/about.html`
+  - [ ] `pages/faculty.html`
+  - [ ] `pages/academic-service-charges.html`
+  - [ ] `pages/announcements/flyer.html`
+  - [ ] `pages/announcements/news.html`
+  - [ ] `pages/announcements/placement.html`
+- **Batch 3 (Portals & Student Services) — Planned**:
+  - [ ] `pages/online-classes.html` (Moodle LMS)
+  - [ ] `pages/bonafide-application.html` (Read-only informational mock)
+  - [ ] `pages/admission-notice.html`
+  - [ ] `pages/e-gymkhana.html`
 - Verify relative link integrity across all pages.
 - **Approval Checkpoint 4**: Review internal pages across batches.
 
