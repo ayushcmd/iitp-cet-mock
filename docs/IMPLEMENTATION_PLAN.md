@@ -96,7 +96,7 @@ iitp-cet-mock/
 - [x] Verify across desktop (1440px), tablet (768px), and mobile (390px).
 - [x] **Approval Checkpoint 3**: Present visual comparison, commit, and push Phase 3 to `master`.
 
-### Phase 4 — All Public Internal Pages (In Progress: Batch 1 Complete)
+### Phase 4 — All Public Internal Pages (In Progress: Batches 1 & 2 Complete)
 - **Batch 1 (Academic & Program Pages) — Completed & Verified**:
   - [x] `pages/academics/academic-calendar.html`
   - [x] `pages/academics/holiday-list.html`
@@ -105,14 +105,14 @@ iitp-cet-mock/
   - [x] `pages/academics/re-exam-schedule.html`
   - [x] `pages/academics/programs.html`
   - [x] `pages/admissions/eligibility.html`
-- **Batch 2 (Institutional & Announcements) — Planned Next**:
-  - [ ] `pages/about.html`
-  - [ ] `pages/faculty.html`
-  - [ ] `pages/academic-service-charges.html`
-  - [ ] `pages/announcements/flyer.html`
-  - [ ] `pages/announcements/news.html`
-  - [ ] `pages/announcements/placement.html`
-- **Batch 3 (Portals & Student Services) — Planned**:
+- **Batch 2 (Institutional & Announcements) — Completed & Verified**:
+  - [x] `pages/about.html`
+  - [x] `pages/faculty.html`
+  - [x] `pages/academic-service-charges.html`
+  - [x] `pages/announcements/flyer.html`
+  - [x] `pages/announcements/news.html`
+  - [x] `pages/announcements/placement.html`
+- **Batch 3 (Portals & Student Services) — Planned Next**:
   - [ ] `pages/online-classes.html` (Moodle LMS)
   - [ ] `pages/bonafide-application.html` (Read-only informational mock)
   - [ ] `pages/admission-notice.html`
