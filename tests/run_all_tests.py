@@ -81,6 +81,17 @@ def run_suite():
         has_main = 'id="mainContent"' in content
         has_footer = 'role="contentinfo"' in content
         has_drawer = 'class="mobile-drawer"' in content
+        has_skip_link = 'skip-link' in content and 'href="#mainContent"' in content
+        has_h1 = bool(re.search(r'<h1[^>]*>.*?</h1>', content, re.IGNORECASE | re.DOTALL))
+
+        # Check button accessible names
+        buttons = re.findall(r'<button([^>]*)>(.*?)</button>', content, re.IGNORECASE | re.DOTALL)
+        buttons_missing_name = []
+        for attrs, inner in buttons:
+            has_aria_label = 'aria-label=' in attrs or 'aria-labelledby=' in attrs
+            has_inner_text = bool(re.sub(r'<[^>]+>', '', inner).strip())
+            if not has_aria_label and not has_inner_text:
+                buttons_missing_name.append(attrs)
 
         # 4. Check for broken image alts
         img_tags = re.findall(r'<img([^>]+)>', content, re.IGNORECASE)
@@ -130,6 +141,9 @@ def run_suite():
             has_main and
             has_footer and
             has_drawer and
+            has_skip_link and
+            has_h1 and
+            len(buttons_missing_name) == 0 and
             len(imgs_missing_alt) == 0 and
             table_responsive_ok and
             len(broken_links_for_page) == 0 and
@@ -145,8 +159,9 @@ def run_suite():
             'http': http_code,
             'disclaimer': has_disclaimer,
             'meta': has_meta_replica,
-            'a11y_landmarks': (has_banner and has_main and has_footer),
+            'a11y_landmarks': (has_banner and has_main and has_footer and has_skip_link and has_h1),
             'img_alt_ok': len(imgs_missing_alt) == 0,
+            'buttons_ok': len(buttons_missing_name) == 0,
             'table_resp': table_responsive_ok,
             'broken_links': len(broken_links_for_page),
             'broken_assets': len(broken_assets_for_page)
@@ -166,12 +181,89 @@ def run_suite():
     print(f"Total Static Assets Verified:   {total_assets} (Broken: {total_broken_assets})")
     print("--------------------------------------------------------------------------------")
 
+    # 7. Mathematical Color Contrast Verification (WCAG 2.2 AA)
+    print("\n================================================================================")
+    print("       WCAG 2.2 AA MATHEMATICAL CONTRAST VERIFICATION (MINIMUM 4.5:1)           ")
+    print("================================================================================\n")
+    contrast_passed = run_contrast_checks()
+    if not contrast_passed:
+        suite_passed = False
+
+    # 8. Live Vercel Production Deployment Check
+    print("\n================================================================================")
+    print("       LIVE VERCEL PRODUCTION DEPLOYMENT VALIDATION                             ")
+    print("================================================================================\n")
+    vercel_passed = run_vercel_checks()
+    if not vercel_passed:
+        suite_passed = False
+
     if suite_passed:
         print("\n🎉 ALL SITE-WIDE TESTS PASSED SUCCESSFULLY (100% HEALTH INDEX)")
     else:
         print("\n❌ SITE-WIDE TESTS REPORTED ONE OR MORE FAILURES")
     print("================================================================================\n")
     return suite_passed
+
+def srgb_to_lin(c):
+    c = c / 255.0
+    return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+def luminance(r, g, b):
+    return 0.2126 * srgb_to_lin(r) + 0.7152 * srgb_to_lin(g) + 0.0722 * srgb_to_lin(b)
+
+def contrast(c1, c2):
+    l1 = luminance(*c1)
+    l2 = luminance(*c2)
+    return (max(l1, l2) + 0.05) / (min(l1, l2) + 0.05)
+
+def run_contrast_checks():
+    color_pairs = [
+        ("Deep Navy (#002147) on Active Orange (#fb7906)", (0, 33, 71), (251, 121, 6), 4.5),
+        ("Deep Navy (#002147) on Hover Orange (#e06c00)", (0, 33, 71), (224, 108, 0), 4.5),
+        ("White (#ffffff) on Dark Navy Header (#003360)", (255, 255, 255), (0, 51, 96), 4.5),
+        ("White (#ffffff) on Accessible CTA Blue (#1d68bd)", (255, 255, 255), (29, 104, 189), 4.5),
+        ("White (#ffffff) on Alert Maroon Ticker (#8B0000)", (255, 255, 255), (139, 0, 0), 4.5),
+        ("Primary Text (#212529) on Surface White (#ffffff)", (33, 37, 41), (255, 255, 255), 4.5),
+        ("Secondary Text (#334155) on Surface White (#ffffff)", (51, 65, 85), (255, 255, 255), 4.5),
+        ("Headings Navy (#042c53) on Surface White (#ffffff)", (4, 44, 83), (255, 255, 255), 4.5),
+    ]
+
+    print(f"{'UI Element / Color Pair':<52} | {'Ratio':<8} | {'Threshold':<9} | {'Status'}")
+    print("-" * 80)
+    all_ok = True
+    for label, c1, c2, threshold in color_pairs:
+        ratio = contrast(c1, c2)
+        passed = ratio >= threshold
+        status = "PASS" if passed else "FAIL"
+        if not passed:
+            all_ok = False
+        print(f"{label:<52} | {ratio:>5.2f}:1  | >={threshold:.1f}:1    | {status}")
+    return all_ok
+
+def run_vercel_checks():
+    base_url = "https://iitp-cet-mock.vercel.app"
+    print(f"Target Origin: {base_url}\n")
+    print(f"{'Page Route':<42} | {'HTTP Code':<10} | {'Status'}")
+    print("-" * 65)
+
+    all_ok = True
+    for rel_path in PAGES:
+        u = f"{base_url}/{rel_path.replace(os.sep, '/')}"
+        try:
+            req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                code = resp.status
+                passed = (code == 200)
+        except Exception as e:
+            code = f"ERR: {e}"
+            passed = False
+
+        if not passed:
+            all_ok = False
+        status_label = "PASS" if passed else "FAIL"
+        print(f"{rel_path:<42} | {str(code):<10} | {status_label}")
+
+    return all_ok
 
 if __name__ == '__main__':
     run_suite()
