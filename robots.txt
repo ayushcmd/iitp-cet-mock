@@ -1,0 +1,7 @@
+# robots.txt for IIT Patna CET Educational Replica
+# Production Host: https://iitp-cet-mock.vercel.app/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://iitp-cet-mock.vercel.app/sitemap.xml
