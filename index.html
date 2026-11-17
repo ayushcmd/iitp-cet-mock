@@ -31,17 +31,12 @@
     <div class="preloader-text">Centre for Educational Technology</div>
   </div>
 
-  <!-- Site-Wide Educational Replica Disclaimer Banner -->
-  <aside class="replica-disclaimer" role="note">
-    <span>⚠️ <strong>Educational Replica Notice:</strong> This is an unofficial educational project created for frontend learning. Not affiliated with or endorsed by IIT Patna. For official institutional information, visit <a href="https://cet.iitp.ac.in/" target="_blank" rel="noopener">cet.iitp.ac.in</a>.</span>
-  </aside>
-
   <!-- Reusable Site Header & Brand Bar -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <div class="brand-wrapper">
-        <a href="index.html" class="brand-logo-link" aria-label="CET IIT Patna Home">
-          <img src="assets/images/logo.png" alt="Centre for Educational Technology - IIT Patna" class="brand-logo-img">
+        <a href="index.html" class="brand-logo-link" aria-label="Indian Institute of Technology Patna">
+          <img src="assets/images/header-logo.png" alt="Indian Institute of Technology Patna - भारतीय प्रौद्योगिकी संस्थान पटना" class="brand-logo-img">
         </a>
       </div>
 
@@ -115,14 +110,17 @@
           <li class="nav-item">
             <a href="pages/online-classes.html" class="nav-link">MOODLE</a>
           </li>
-          <li class="nav-item nav-cta">
-            <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener" class="nav-link">Apply Now</a>
+          <li class="nav-item">
+            <a href="https://registrations.iitp-cep.in" target="_blank" rel="noopener" class="nav-link">Apply Now</a>
           </li>
           <li class="nav-item">
-            <a href="pages/e-gymkhana.html" class="nav-link">E-Gymkhana</a>
+            <a href="pages/e-gymkhana.html" class="nav-link">E Gymkhana</a>
           </li>
           <li class="nav-item">
-            <a href="pages/bonafide-application.html" class="nav-link">Bonafide</a>
+            <a href="pages/admission-notice.html" class="nav-link">admission notice</a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/bonafide-application.html" class="nav-link">Bonafide Application</a>
           </li>
         </ul>
       </nav>
@@ -228,22 +226,7 @@
   <!-- Main Content Landmark (WCAG 2.2 AA) -->
   <main id="mainContent">
 
-  <!-- Marquee Announcement Ticker (Pause on Hover) -->
-  <div class="announcement-ticker" role="region" aria-label="Announcements Marquee">
-    <div class="ticker-badge">📢 Announcements:</div>
-    <div class="ticker-track-wrapper">
-      <div class="ticker-track">
-        <span class="ticker-item">🗓️ Academic Calendar for Autumn 2025</span>
-        <span class="ticker-item">🚀 Applications Invited Year-Round | <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener">Apply Now</a></span>
-        <span class="ticker-item">🎓 Admission Open For Autumn 2026 Session</span>
-        <span class="ticker-item">🗓️ Academic Calendar for Autumn 2025</span>
-        <span class="ticker-item">🚀 Applications Invited Year-Round | <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener">Apply Now</a></span>
-        <span class="ticker-item">🎓 Admission Open For Autumn 2026 Session</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Hero Section (Gradient & Glassmorphism) -->
+  <!-- Main Hero Section (Campus Background & Centered Glassmorphism) -->
   <section class="hero-section" aria-label="Hero Banner">
     <div class="container">
       <div class="hero-glass-card">
@@ -261,6 +244,21 @@
       </div>
     </div>
   </section>
+
+  <!-- Marquee Announcement Ticker (Pause on Hover) -->
+  <div class="announcement-ticker" role="region" aria-label="Announcements Marquee">
+    <div class="ticker-badge">📢 Announcements:</div>
+    <div class="ticker-track-wrapper">
+      <div class="ticker-track">
+        <span class="ticker-item">🗓️ Academic Calendar for Autumn 2025</span>
+        <span class="ticker-item">🚀 Applications Invited Year-Round | <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener">Apply Now</a></span>
+        <span class="ticker-item">🎓 Admission Open For Autumn 2026 Session</span>
+        <span class="ticker-item">🗓️ Academic Calendar for Autumn 2025</span>
+        <span class="ticker-item">🚀 Applications Invited Year-Round | <a href="https://registrations.iitp-cep.in/" target="_blank" rel="noopener">Apply Now</a></span>
+        <span class="ticker-item">🎓 Admission Open For Autumn 2026 Session</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Introduction, Quick Stats & Notice Sidebar Section -->
   <section class="section-padding" aria-label="Introduction and Notices">
@@ -643,7 +641,10 @@
     <!-- Bottom Copyright & Disclaimer -->
     <div class="footer-bottom-bar">
       <div class="container">
-        © CET IIT Patna 2026 | Unofficial Educational Replica | Designed &amp; Maintained for Learning by ayushcmd
+        <p>© CET IIT Patna 2026 | Designed &amp; Maintained for Learning by ayushcmd</p>
+        <p class="replica-disclaimer" style="margin-top: 0.35rem; font-size: 0.8125rem; color: #94a3b8;">
+          Unofficial educational frontend replica. Not affiliated with or endorsed by IIT Patna. Official website: <a href="https://cet.iitp.ac.in/" target="_blank" rel="noopener" style="color: #cbd5e1; text-decoration: underline;">cet.iitp.ac.in</a>.
+        </p>
       </div>
     </div>
   </footer>

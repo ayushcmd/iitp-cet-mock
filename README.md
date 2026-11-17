@@ -8,6 +8,17 @@
 
 ---
 
+## Educational Purpose & Disclaimer
+
+This repository is an unofficial educational study and frontend implementation exercise recreating the public interface of the **Centre for Educational Technology (CET) at the Indian Institute of Technology Patna (IIT Patna)**.
+
+- **Non-Affiliation**: This project is completely independent and is NOT affiliated with, sponsored by, authorized by, or endorsed by IIT Patna or any of its departments.
+- **Academic Purpose**: Created strictly for personal educational learning, web development research, frontend UI reverse-engineering, and WCAG accessibility analysis.
+- **Data Protection & Privacy**: No user credentials, form inputs, or student personal information are collected, tracked, or transmitted.
+- **Official Institutional Authority**: For official admissions, academic circulars, student verification, examinations, fees, and institutional inquiries, always consult the official portal at **[https://cet.iitp.ac.in/](https://cet.iitp.ac.in/)** or the primary institute site at **[https://www.iitp.ac.in/](https://www.iitp.ac.in/)**.
+
+---
+
 ## 1. Project Overview & Production URL
 
 - **Production Deployment URL**: **[https://iitp-cet-mock.vercel.app/](https://iitp-cet-mock.vercel.app/)**
