@@ -380,6 +380,13 @@
   align-items: start;
 }
 
+.content-primary,
+.content-main,
+.two-column-layout > *,
+.content-grid > * {
+  min-width: 0;
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -583,6 +590,8 @@
    -------------------------------------------------------------------------- */
 .table-responsive {
   width: 100%;
+  max-width: 100%;
+  display: block;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin-bottom: var(--space-lg);
