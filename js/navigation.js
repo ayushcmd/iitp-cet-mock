@@ -1,16 +1,17 @@
 /**
  * IIT Patna - Centre for Educational Technology (CET) Replica
- * Navigation Script: Mobile Drawer Toggle, Accordion Submenus, Active Route Highlighting
+ * Navigation Script: Mobile Drawer Toggle, Focus Trapping, Accordion Submenus, Active Route Highlighting
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
   initMobileAccordions();
+  initDesktopDropdowns();
   highlightActiveNav();
 });
 
 /**
- * Initializes the mobile offcanvas sliding drawer and backdrop.
+ * Initializes the mobile offcanvas sliding drawer and backdrop with complete accessibility and focus trap.
  */
 function initMobileDrawer() {
   const toggleBtn = document.querySelector('.mobile-menu-toggle');
@@ -20,7 +21,11 @@ function initMobileDrawer() {
 
   if (!toggleBtn || !drawer || !backdrop) return;
 
+  let previousActiveElement = null;
+  const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
   function openDrawer() {
+    previousActiveElement = document.activeElement;
     drawer.classList.add('open');
     backdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -36,13 +41,44 @@ function initMobileDrawer() {
     backdrop.classList.remove('active');
     document.body.style.overflow = '';
     toggleBtn.setAttribute('aria-expanded', 'false');
-    // Return focus back to toggle button
-    toggleBtn.focus();
+    // Return focus back to previous active element or toggle button
+    if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+      previousActiveElement.focus();
+    } else {
+      toggleBtn.focus();
+    }
+  }
+
+  // Keyboard focus trap inside mobile drawer
+  function handleFocusTrap(e) {
+    if (e.key !== 'Tab' || !drawer.classList.contains('open')) return;
+
+    const focusableElements = Array.from(drawer.querySelectorAll(focusableSelector)).filter(el => {
+      return el.offsetWidth > 0 || el.offsetHeight > 0 || el === document.activeElement;
+    });
+
+    if (!focusableElements.length) return;
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (e.shiftKey) { // Shift + Tab
+      if (document.activeElement === firstElement) {
+        lastElement.focus();
+        e.preventDefault();
+      }
+    } else { // Tab
+      if (document.activeElement === lastElement) {
+        firstElement.focus();
+        e.preventDefault();
+      }
+    }
   }
 
   toggleBtn.addEventListener('click', openDrawer);
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
   backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', handleFocusTrap);
 
   // Close on Escape key press
   document.addEventListener('keydown', (e) => {
@@ -78,6 +114,35 @@ function initMobileAccordions() {
 
       parentItem.classList.toggle('expanded', !isExpanded);
       toggle.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+    });
+  });
+}
+
+/**
+ * Keyboard support for desktop navigation dropdowns (ARIA state management).
+ */
+function initDesktopDropdowns() {
+  const dropdownItems = document.querySelectorAll('.desktop-nav .nav-item.dropdown');
+
+  dropdownItems.forEach((item) => {
+    const toggle = item.querySelector('.dropdown-toggle');
+    if (!toggle) return;
+
+    item.addEventListener('focusin', () => {
+      toggle.setAttribute('aria-expanded', 'true');
+    });
+
+    item.addEventListener('focusout', (e) => {
+      if (!item.contains(e.relatedTarget)) {
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
     });
   });
 }
