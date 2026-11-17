@@ -82,11 +82,16 @@
   text-decoration: none;
 }
 
-/* Active Nav State (Matches Original Orange Pill for Home) */
+/* Active Nav State (Matches Original Orange Pill for Home with WCAG 2.2 AA Contrast) */
 .nav-item.active > .nav-link {
   background-color: var(--color-accent-orange);
-  color: #ffffff;
+  color: #002147;
   font-weight: 700;
+}
+
+.nav-item.active > .nav-link:hover {
+  background-color: #e06c00;
+  color: #002147;
 }
 
 .nav-link .caret-icon {
@@ -100,10 +105,10 @@
   transform: rotate(180deg);
 }
 
-/* Action Apply Now Button in Navbar */
+/* Action Apply Now Button in Navbar (High Contrast WCAG 2.2 AA) */
 .nav-item.nav-cta .nav-link {
   background-color: var(--color-accent-orange);
-  color: #ffffff;
+  color: #002147;
   font-weight: 700;
   border-radius: var(--radius-pill);
   padding: 0.45rem 1.1rem;
@@ -112,6 +117,7 @@
 
 .nav-item.nav-cta .nav-link:hover {
   background-color: #e06c00;
+  color: #002147;
   transform: translateY(-1px);
 }
 
@@ -976,7 +982,7 @@
 }
 
 .btn-cta-blue {
-  background: #378ADD;
+  background: #1d68bd;
   color: #ffffff;
   border: none;
   padding: 12px 28px;
@@ -988,12 +994,12 @@
   align-items: center;
   gap: 8px;
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(55, 138, 221, 0.4);
+  box-shadow: 0 4px 14px rgba(29, 104, 189, 0.4);
   transition: all var(--transition-fast);
 }
 
 .btn-cta-blue:hover {
-  background: #2570be;
+  background: #175399;
   transform: translateY(-2px);
   color: #ffffff;
   text-decoration: none;

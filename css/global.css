@@ -155,13 +155,13 @@ button {
   cursor: pointer;
 }
 
-/* Accessible Skip to Content Link (WCAG 2.4.1) */
+/* Accessible Skip to Content Link (WCAG 2.4.1 & WCAG 1.4.3 High Contrast) */
 .skip-link {
   position: absolute;
   top: -100px;
   left: 1rem;
   background-color: var(--color-accent-orange);
-  color: #ffffff !important;
+  color: #002147 !important;
   font-weight: 700;
   padding: 0.6rem 1.25rem;
   border-radius: var(--radius-sm);
@@ -173,7 +173,7 @@ button {
 
 .skip-link:focus {
   top: 1rem;
-  outline: 3px solid #ffffff;
+  outline: 3px solid #002147;
   outline-offset: 2px;
 }
 
@@ -384,7 +384,7 @@ p:last-child {
   width: 44px;
   height: 44px;
   background-color: var(--color-accent-orange);
-  color: #ffffff;
+  color: #002147;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -405,7 +405,7 @@ p:last-child {
 
 #astroid-backtotop:hover {
   background-color: #e06c00;
-  color: #ffffff;
+  color: #002147;
 }
 
 #astroid-backtotop svg {
