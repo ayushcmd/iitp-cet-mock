@@ -1297,7 +1297,7 @@
 /* Bonafide Application Page Components */
 .bonafide-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.75rem;
   margin-bottom: 2rem;
 }
@@ -1307,6 +1307,8 @@
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   text-align: left;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .bonafide-instructions-card {

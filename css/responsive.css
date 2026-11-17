@@ -408,6 +408,14 @@
 }
 
 @media (max-width: 480px) {
+  .bonafide-grid {
+    grid-template-columns: 1fr;
+  }
+  .bonafide-card {
+    padding: 1.25rem 0.85rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
   .moodle-portal-container {
     padding: 1.25rem 0.85rem;
   }
