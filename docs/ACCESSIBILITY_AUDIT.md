@@ -42,11 +42,10 @@ This report details the technical accessibility evaluation of the IIT Patna Cent
     - `<header class="site-header" role="banner">`
     - `<nav class="desktop-nav" aria-label="Main Navigation">`
     - `<nav class="breadcrumb-nav" aria-label="Breadcrumb">`
-    - `<aside class="replica-disclaimer" role="alert" aria-label="Educational replica notice">`
     - `<main class="page-content" id="mainContent">` (including `index.html`)
     - `<aside class="content-sidebar" aria-label="Notices and Circulars">`
     - `<aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">`
-    - `<footer class="site-footer" role="contentinfo">`
+    - `<footer class="site-footer" role="contentinfo">` (incorporating `.replica-disclaimer` compact educational note)
   - **Heading Hierarchy**: Strict H1 → H2 → H3 progression without skipped heading levels on all pages. Every page contains exactly one primary H1.
   - **Table Structure**: Academic timetables, re-exam schedules, holiday lists, and service charge tables use semantic `<thead>`, `<tbody>`, and `<th scope="col">` to provide column associations for screen readers.
 

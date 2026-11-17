@@ -15,7 +15,8 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-.header-inner {
+.header-inner,
+.header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,19 +26,22 @@
   min-height: 62px;
 }
 
-.brand-wrapper {
+.brand-wrapper,
+.brand-link-wrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.brand-logo-link {
+.brand-logo-link,
+.brand-link {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
-.brand-logo-img {
+.brand-logo-img,
+.brand-logo {
   height: 48px;
   width: auto;
   max-width: 260px;
@@ -52,12 +56,14 @@
   align-items: center;
 }
 
-.nav-list {
+.nav-list,
+.nav-menu {
   display: flex;
   align-items: center;
   gap: 0.15rem;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .nav-item {
@@ -86,17 +92,17 @@
   text-decoration: none;
 }
 
-/* Active Nav State (Matches Original Orange Button for Home in Screenshot 2) */
+/* Active Nav State (Preserves Original Orange Button with WCAG 2.2 AA Contrast for Normal Text) */
 .nav-item.active > .nav-link {
   background-color: #fb7906;
-  color: #ffffff;
-  font-weight: 600;
+  color: #002147;
+  font-weight: 700;
   border-radius: 4px;
 }
 
 .nav-item.active > .nav-link:hover {
   background-color: #e06c00;
-  color: #ffffff;
+  color: #002147;
 }
 
 .nav-link .caret-icon {
