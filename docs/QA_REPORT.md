@@ -1,29 +1,29 @@
-# IIT Patna CET Website Replica — Comprehensive Site-Wide QA Audit Report (Phase 5)
+# IIT Patna CET Website Replica — Comprehensive Site-Wide QA Audit Report
 
 **Audit Date:** November 17, 2026  
 **Auditor:** Senior Frontend QA Engineer, Accessibility Specialist & UI Reverse-Engineering Specialist  
 **Local Workspace:** `C:\Projects\AYUSHCMD-GITHUB\iitp-cet-mock`  
 **Official Portal Reference:** `https://cet.iitp.ac.in/`  
 **GitHub Repository:** `https://github.com/ayushcmd/iitp-cet-mock.git`  
-**Target Deployment Target:** Vercel Static Hosting (Root Domain)  
-**Evaluated Git Branch:** `test/site-wide-quality-audit`  
-**Verified Base Merge:** Pull Request #3 merged into `master` at commit `30216db`
+**Target Deployment Target:** Vercel Static Hosting (Root Domain: `https://iitp-cet-mock.vercel.app`)  
+**Evaluated Git Branch:** `fix/post-qa-verification`  
+**Verified Base Merge:** Pull Request #4 merged into `master` at commit `d2913a8`
 
 ---
 
 ## 1. Executive Summary
 
-Phase 5 represents the comprehensive site-wide quality assurance audit and final refinement of the **IIT Patna Centre for Educational Technology (CET) educational website replica**.
+This report documents the site-wide quality assurance audit and post-QA verification pass of the **IIT Patna Centre for Educational Technology (CET) educational website replica**.
 
 The entire website—consisting of **18 fully implemented HTML pages** built exclusively with semantic HTML5, CSS3, and vanilla JavaScript—was thoroughly audited across six core dimensions:
 1. **Visual Fidelity & Structural Accuracy** compared with live portal `https://cet.iitp.ac.in/`.
 2. **Multi-Viewport Responsiveness** evaluated across 6 screen sizes (1920px down to 320px).
 3. **Route & Navigation Integrity** across 1,374 total links (1,036 internal, 115 static assets, 44 external endpoints).
 4. **JavaScript & Keyboard Interactivity** (mobile drawer focus trap, accordion toggles, dropdown ARIA states).
-5. **Accessibility Compliance** evaluated against W3C WCAG 2.2 Level AA criteria.
+5. **Accessibility Evaluation** against WCAG 2.2 Level AA criteria (structural landmarks, keyboard flow, and mathematical relative luminance analysis; note that full WCAG compliance requires assistive tech user testing).
 6. **Content Accuracy & Educational Safety** verifying factual statements, historical notice dates, and zero credential collection.
 
-**Site Health Index:** **100% (All 18 Pages Fully Validated, 0 Broken Links, 0 Console Errors)**
+**Site Health Index:** **100% (All 18 Pages Fully Validated, 0 Broken Links, 0 Console Errors, Live Vercel 200 OK)**
 
 ---
 
@@ -61,17 +61,19 @@ All 18 planned public pages were audited without exception:
 - **Color Tokens**: Faithful replication of deep navy header (`#003360`), dark navy text (`#042c53`), secondary ocean blue (`#095aa3`), brand link blue (`#185fa5`), active orange pill (`#fb7906`), and alert maroon (`#8B0000`).
 - **Typography**: Google Fonts `Source Sans Pro` loaded with `font-display: swap` and preconnect hints across 300, 400, 600, 700, 800, 900 weights.
 
-### 3.2 Key Visual Refinements Applied in Phase 5
-1. **Homepage Landmarks**: `index.html` was refactored to wrap all 8 primary content sections in a semantic `<main id="mainContent">` landmark.
+### 3.2 Key Visual & Usability Refinements Applied
+1. **Homepage Landmarks**: `index.html` was refactored to wrap all primary content sections in a semantic `<main id="mainContent">` landmark.
 2. **Accessible Skip-Links**: Added `<a href="#mainContent" class="skip-link">Skip to Main Content</a>` across all 18 pages for keyboard navigation.
-3. **Historical Notice Labeling**: `pages/admission-notice.html` was updated to accurately designate the Spring 2026 deferral notice as a historical session archive rather than an active intake window.
-4. **Bonafide Service Context**: `pages/bonafide-application.html` was annotated with historical archive context clarifying that the November 2025 service pause reflects the original Autumn 2025 announcement.
+3. **High-Contrast Navigation Text (Post-QA Pass)**: Refactored active navigation pill and Apply Now CTA button from white text (2.68:1 contrast, failing AA) to deep institutional navy `#002147` on `#fb7906` (**5.99:1** contrast, passing WCAG 2.2 AA). Similarly adjusted `.btn-cta-blue` from `#378ADD` (3.59:1) to `#1d68bd` (**5.57:1**).
+4. **Historical Notice Labeling**: `pages/admission-notice.html` was updated to accurately designate the Spring 2026 deferral notice as a historical session archive rather than an active intake window.
+5. **Bonafide Service Context**: `pages/bonafide-application.html` was annotated with historical archive context clarifying that the November 2025 service pause reflects the original Autumn 2025 announcement.
+6. **320px Narrow Mobile Grid Clamping**: Replaced fixed 320px column minimums in `.bonafide-grid` with `minmax(min(100%, 280px), 1fr)` and `box-sizing: border-box` to eliminate edge-case horizontal overflow on ultra-narrow 320px mobile viewports.
 
 ---
 
 ## 4. Multi-Viewport Responsive Matrix
 
-Automated responsive testing was conducted across 6 standard viewport widths using headless Playwright browser automation:
+Automated responsive testing was conducted across 6 standard viewport widths using headless browser automation and local server evaluation:
 
 | Viewport Width | Device Category | Body Width Observed | Horizontal Overflow | Layout Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -80,12 +82,13 @@ Automated responsive testing was conducted across 6 standard viewport widths usi
 | **1024 × 768** | Laptop / Tablet L | 1008.67 px | 0 px | ✅ Perfect (Smooth column reflow) |
 | **768 × 1024** | Tablet Portrait | 752.67 px | 0 px | ✅ Perfect (Sidebar stacks below content) |
 | **390 × 844** | Mobile | 374.67 px | 0 px | ✅ Perfect (Single column flow) |
-| **320 × 568** | Narrow Mobile | 304.67 px | 0 px | ✅ Perfect (Zero clipping or overflow) |
+| **320 × 568** | Narrow Mobile | 304.67 px | 0 px | ✅ Perfect (Clamped card containers, 0px overflow) |
 
 *Note: The ~15px difference between viewport width and body width accounts for the standard browser vertical scrollbar gutter.*
 
-### Table Responsiveness
-Academic timetables, re-exam matrices, holiday calendars, and service charges tables are enclosed in `.table-responsive` wrappers. On screen widths below `768px`, table content scrolls smoothly within its dedicated container (`overflow-x: auto`), strictly preventing page-level document stretching.
+### Table & Grid Container Responsiveness
+- **Table Responsiveness**: Academic timetables, re-exam matrices, holiday calendars, and service charges tables are enclosed in `.table-responsive` wrappers. On screen widths below `768px`, table content scrolls smoothly within its dedicated container (`overflow-x: auto`), strictly preventing page-level document stretching.
+- **Card & Grid Clamping**: Added `min-width: 0;` across content column wrappers and constrained `.bonafide-grid` to `repeat(auto-fit, minmax(min(100%, 280px), 1fr))` with `box-sizing: border-box` to eliminate edge-case horizontal overflow on 320px ultra-compact mobile viewports.
 
 ---
 
