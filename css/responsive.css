@@ -202,11 +202,13 @@
    3. Breakpoint: <= 1199px (Laptops & Small Desktops)
    -------------------------------------------------------------------------- */
 @media (max-width: 1199px) {
-  .header-inner {
+  .header-inner,
+  .header-container {
     padding: 0.35rem var(--container-padding);
   }
 
-  .brand-logo-img {
+  .brand-logo-img,
+  .brand-logo {
     height: 42px;
   }
 
@@ -243,7 +245,8 @@
     display: block;
   }
 
-  .brand-logo-img {
+  .brand-logo-img,
+  .brand-logo {
     height: 48px;
   }
 
@@ -272,12 +275,14 @@
     --space-2xl: 2.5rem;
   }
 
-  .header-inner {
+  .header-inner,
+  .header-container {
     min-height: 64px;
     padding: 0.5rem var(--container-padding);
   }
 
-  .brand-logo-img {
+  .brand-logo-img,
+  .brand-logo {
     height: 40px;
   }
 

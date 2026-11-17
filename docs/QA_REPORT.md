@@ -157,7 +157,7 @@ Tested via `tests/check_external_urls.py`:
 3. **Academic Service Charges**: Verified Rs. 5,500 semester exam fee, Rs. 1,000 supplementary exam fee, and 10 official certificate issuance rates.
 4. **Historical Notice Accuracy**: Preserved August 9, 2025 announcement date regarding Autumn 2025 seat fulfillment and Spring 2026 deferral.
 5. **Privacy & Credential Safety**: Zero collection of passwords, usernames, student records, fee transactions, or personal data. All forms point to verified official institutional portals.
-6. **Educational Attribution**: Prominent amber educational replica notice displayed consistently on every page.
+6. **Educational Attribution**: Removed oversized top yellow banner from all 18 pages to eliminate unwanted header spacing and align with the authentic reference layout. Retained a clear, compact unofficial educational disclaimer attribution in every page footer (`.replica-disclaimer`) and comprehensive documentation in `README.md`.
 
 ---
 

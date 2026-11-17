@@ -18,16 +18,17 @@ This Visual Fidelity Audit evaluates all 18 pages of the unofficial educational 
 ## 2. Core Visual Systems Comparison
 
 ### 2.1 Institute Branding & Header
-- **Original Site**: Displays bilingual IIT Patna brand emblem (`logo.png`) featuring Devanagari "भारतीय प्रौद्योगिकी संस्थान पटना" and English "Indian Institute of Technology Patna" with Centre for Educational Technology typography.
-- **Replica Implementation**: Uses identical asset dimensions (`width="320" height="60"`) positioned in a flexbox header container with deep navy background (`#003360`).
-- **Discrepancy / Alignment**: The original site has no top educational disclaimer. The replica includes a high-contrast amber disclaimer banner (`#fffbeb`, border `#fef3c7`, text `#92400e`) pinned at the top to fulfill ethical reproduction standards without shifting header layout.
+- **Original Site**: Displays bilingual IIT Patna brand emblem (`header-logo.png` / `lo.png`) featuring circular IIT Patna seal, English "Indian Institute of Technology Patna" and Devanagari "भारतीय प्रौद्योगिकी संस्थान पटना".
+- **Replica Implementation**: Uses authentic bilingual asset dimensions (`height: 48px; width: auto; max-width: 260px`) positioned in a flexbox header container (`.header-inner, .header-container`) with deep blue gradient background (`linear-gradient(90deg, #1e3c72, #2a5298)`).
+- **Discrepancy / Alignment**: The original site has no top educational disclaimer. The replica now completely removes the top disclaimer banner across all 18 pages so the navbar sits flush at viewport `y = 0` without unwanted spacing. A clear, compact educational disclaimer attribution is preserved discreetly in every page footer, with comprehensive institutional context documented in `README.md`.
 
 ### 2.2 Navigation Architecture
 - **Desktop Nav**:
-  - Horizontal menu bar with hover/focus-within dropdown menus.
+  - Compact horizontal menu bar with hover/focus-within dropdown menus (`min-height: 62px`).
   - Two-tier nested flyouts (`Academics -> Program ▶ -> B.Tech / M.Tech / BBA`).
-  - Active route pill indicator (`#fb7906` orange background with high-contrast `#002147` deep navy text for active page to meet WCAG 2.2 AA 5.99:1 contrast).
+  - Active route button indicator (`#fb7906` orange background with high-contrast `#002147` deep navy text for active page to meet WCAG 2.2 AA with a 5.99:1 default and 4.83:1 hover contrast ratio).
   - External links marked with `↗` glyphs.
+  - "Apply Now" styled as a clean standard nav link matching the reference site (not an oversized pill button).
 - **Mobile Navigation**:
   - Offcanvas drawer sliding in from left (`width: 320px; max-width: 85vw; background: #003360`).
   - Submenu accordion toggles with rotating chevron icons (180deg smooth CSS rotation).
