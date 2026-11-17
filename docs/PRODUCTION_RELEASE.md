@@ -49,19 +49,21 @@ Automated live network validation was executed against `https://iitp-cet-mock.ve
 
 ---
 
-## 3. HTTPS / TLS Security Configuration
+## 3. HTTPS / TLS & Production Security Headers
 
-The live production deployment was inspected at the transport layer:
+The live production deployment was inspected at the transport and HTTP header layers:
 - **Protocol**: **TLSv1.3**
 - **Cipher Suite**: `TLS_AES_128_GCM_SHA256` (128-bit forward secrecy)
 - **Certificate Authority (Issuer)**: Google Trust Services (`WR1`)
 - **Subject**: `CN=*.vercel.app`
 - **Validity**: Verified active (Valid to: **January 29, 2027**)
+- **HSTS Enforcement (Vercel Platform)**:
+  - `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload` is automatically and natively served by the Vercel Edge platform across all `*.vercel.app` domains.
+  - To avoid duplicate or conflicting HSTS headers, HSTS is intentionally omitted from repository configuration files and left to Vercel's platform handler.
 - **Security Headers Injected via `vercel.json`**:
-  - `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`
-  - `X-Content-Type-Options: nosniff`
-  - `X-Frame-Options: SAMEORIGIN`
-  - `Referrer-Policy: strict-origin-when-cross-origin`
+  - `X-Content-Type-Options: nosniff` (Prevents MIME-sniffing attacks)
+  - `X-Frame-Options: SAMEORIGIN` (Defends against clickjacking)
+  - `Referrer-Policy: strict-origin-when-cross-origin` (Protects referrer privacy on cross-origin requests)
 
 ---
 
@@ -110,11 +112,13 @@ The user proposed potentially configuring: `cet-iitp-ac-in.duckdns.org`.
 
 ---
 
-## 6. Static Caching, SEO & Asset Provenance
+## 6. Static Caching Strategy, SEO & Asset Provenance
 
-1. **Static Edge Caching**:
-   - Configured in `vercel.json`: static assets (`assets/`, `css/`, `js/`) carry `Cache-Control: public, max-age=31536000, immutable`.
-   - HTML documents carry `Cache-Control: public, max-age=0, must-revalidate` ensuring instantaneous delivery of updates.
+1. **Safe Static Edge Caching (Preventing Stale Assets)**:
+   - **Stable Non-Versioned CSS & JavaScript (`/css/*`, `/js/*`)**: Configured in `vercel.json` with `Cache-Control: public, max-age=0, must-revalidate`. This safe cache policy allows browsers to store assets locally while requiring conditional revalidation via HTTP ETags (`If-None-Match`). When files are unchanged, Vercel immediately responds with `304 Not Modified` (~15ms latency, 0 byte transfer). When a new deployment updates CSS or JS, browsers immediately receive the new files, eliminating stale cache issues.
+   - **Static Media Assets (`/assets/*`)**: Configured with `Cache-Control: public, max-age=86400, must-revalidate` (24-hour browser caching with ETag revalidation).
+   - **Genuinely Fingerprinted Assets**: Configured with `Cache-Control: public, max-age=31536000, immutable` strictly for content-hashed assets matching `/(.*)[.-]([0-9a-fA-F]{8,})\.(.*)`. Unversioned files are never cached with `immutable`.
+   - **HTML Documents**: Served with Vercel's default `Cache-Control: public, max-age=0, must-revalidate` ensuring instantaneous page delivery upon deployment.
 2. **Favicon Support**:
    - Added `favicon.ico` (32×32) at the repository root generated from the official institutional seal (`iitp-seal.png`).
    - All 18 HTML pages retain relative `<link rel="icon" type="image/png" href=".../assets/images/iitp-seal.png">`.

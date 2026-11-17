@@ -26,7 +26,7 @@ This project strictly adheres to native, zero-framework, standards-compliant web
 - **HTML5**: Semantic tags (`<header>`, `<nav>`, `<main id="mainContent">`, `<article>`, `<section>`, `<aside>`, `<footer>`, `<table>`, `<th scope="col">`). Includes accessible skip-navigation links across all 18 pages.
 - **CSS3**: Pure CSS custom properties (design tokens), modern CSS Grid, Flexbox, glassmorphic filters (`backdrop-filter`), keyframe animations, and responsive media queries (`1200px`, `992px`, `768px`, `480px`, `320px`). Zero CSS frameworks (no Tailwind, Bootstrap, or Sass compilation required).
 - **Vanilla JavaScript (ES6+)**: Pure client-side scripts handling mobile offcanvas drawer navigation, keyboard focus trapping, accessible accordion toggles, hero carousels with pause-on-hover/touch/reduced-motion, dynamic category filtering, and preloader lifecycle. Zero runtime dependencies (no React, Vue, jQuery, or Node.js runtime required).
-- **Security & Caching**: Custom `vercel.json` injecting HTTP security headers (`Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`) and long-term immutable caching headers for static assets.
+- **Security & Caching**: Custom `vercel.json` injecting HTTP security headers (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`; HSTS enforced natively by Vercel edge) and a safe revalidation caching policy (`max-age=0, must-revalidate` for unversioned CSS/JS with ETag conditional validation, preserving immutable caching strictly for fingerprinted assets).
 
 ---
 
