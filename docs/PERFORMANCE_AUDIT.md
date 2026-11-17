@@ -15,33 +15,35 @@ The IIT Patna CET website replica achieves exceptional web performance by intent
 
 Without heavy JavaScript frameworks (React, Vue, Angular), client-side virtual DOMs, or bloated bundler runtimes (Webpack, Vite), the entire codebase consists of lightweight, native browser-parsable assets that execute instantaneously on all modern mobile and desktop browsers.
 
-### Key Performance Highlights
-- **Total CSS Payload:** **51.78 KB** (Uncompressed) / **~11.5 KB** (Gzipped / Brotli)
+### Key Performance Highlights & Measured Evidence
+- **Total CSS Payload:** **52.73 KB** (Uncompressed) / **~11.8 KB** (Gzipped / Brotli)
 - **Total JavaScript Payload:** **12.46 KB** (Uncompressed) / **~3.8 KB** (Gzipped / Brotli)
 - **Core Site Assets (Logos & Seal):** **69.05 KB**
 - **JavaScript Execution Overhead:** **< 5 ms** (Instant DOM parsing)
-- **Cumulative Layout Shift (CLS):** **0.00** across all 18 pages (fixed image dimensions, CSS grid containers)
-- **First Contentful Paint (FCP):** **< 0.3s** on local server / expected **< 0.5s** on Vercel Edge CDN
+- **Local Server Response Time (Port 3000):** **3.5 ms - 25.3 ms** (Measured across 5 test requests)
+- **Live Vercel Edge Latency (`https://iitp-cet-mock.vercel.app`):** **350 ms - 908 ms** (Measured over HTTPS across 5 test requests)
+- **Laboratory Layout Shift (Lab CLS):** **~0.00** (Estimated from fixed dimension attributes and CSS grid clamping)
+- **Field Core Web Vitals (LCP, INP, CLS via CrUX):** **Unverified** (No real-user telemetry data exists in the Chrome User Experience Report for this educational replica)
 
 ---
 
-## 2. Asset Weight & Payload Breakdown
+## 2. Asset Weight & Payload Breakdown (Measured on Disk)
 
 ### 2.1 CSS Footprint
-| File | Role | Uncompressed Size | Estimated Gzipped |
+| File | Role | Uncompressed Size (Measured) | Estimated Compressed |
 | :--- | :--- | :--- | :--- |
-| `css/global.css` | Design tokens, reset, typography, skip-link, reduced motion | 10.01 KB | ~2.5 KB |
-| `css/components.css` | Header, navigation, cards, tables, accordions, footer | 32.98 KB | ~7.2 KB |
-| `css/responsive.css` | Breakpoints, mobile drawer, responsive table wrappers | 8.79 KB | ~1.8 KB |
-| **Total CSS** | **Complete Styling System** | **51.78 KB** | **~11.5 KB** |
+| `css/global.css` | Design tokens, reset, typography, skip-link, reduced motion | 10.44 KB (10,694 B) | ~2.6 KB |
+| `css/components.css` | Header, navigation, cards, tables, accordions, footer | 33.33 KB (34,134 B) | ~7.3 KB |
+| `css/responsive.css` | Breakpoints, mobile drawer, responsive table wrappers | 8.95 KB (9,166 B) | ~1.9 KB |
+| **Total CSS** | **Complete Styling System** | **52.73 KB (53,994 B)** | **~11.8 KB** |
 
 ### 2.2 JavaScript Footprint
-| File | Role | Uncompressed Size | Estimated Gzipped |
+| File | Role | Uncompressed Size (Measured) | Estimated Compressed |
 | :--- | :--- | :--- | :--- |
-| `js/navigation.js` | Mobile drawer, focus trap, submenu accordions, active nav | 6.00 KB | ~1.9 KB |
-| `js/main.js` | Preloader fade-out, back-to-top, vanilla accordion handler | 3.88 KB | ~1.2 KB |
-| `js/programs.js` | Homepage category filtering (UG/PG/Doctoral) | 2.58 KB | ~0.7 KB |
-| **Total JavaScript** | **Full Client-Side Interactivity** | **12.46 KB** | **~3.8 KB** |
+| `js/navigation.js` | Mobile drawer, focus trap, submenu accordions, active nav | 6.00 KB (6,143 B) | ~1.9 KB |
+| `js/main.js` | Preloader fade-out, back-to-top, vanilla accordion handler | 3.88 KB (3,975 B) | ~1.2 KB |
+| `js/programs.js` | Homepage category filtering (UG/PG/Doctoral) | 2.58 KB (2,637 B) | ~0.7 KB |
+| **Total JavaScript** | **Full Client-Side Interactivity** | **12.46 KB (12,755 B)** | **~3.8 KB** |
 
 ### 2.3 Image Assets
 | Directory / Asset | Count | Total Size | Notes & Optimizations |
@@ -65,13 +67,14 @@ Without heavy JavaScript frameworks (React, Vue, Angular), client-side virtual D
   ```
 - **`display=swap` Directive**: Prevents Flash of Invisible Text (FOIT). Text renders immediately using the system font stack (`system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`), smoothly swapping to `Source Sans Pro` once font glyphs resolve.
 
-### 3.2 Layout Shift Prevention (CLS = 0.00)
+### 3.2 Layout Shift Prevention Strategies (Lab Estimate CLS ~0.00)
 - Explicit `width` and `height` dimensions configured on logos:
   ```html
   <img src="../assets/images/logo.png" alt="..." width="320" height="60">
   ```
 - Faculty cards configure fixed image bounding boxes (`width: 130px; height: 130px; aspect-ratio: 1 / 1`).
-- Container grids utilize CSS Grid `repeat(auto-fit, minmax(...))` with predefined minimum column constraints to prevent DOM reflow upon subresource resolution.
+- Container grids utilize CSS Grid `repeat(auto-fit, minmax(...))` with predefined minimum column constraints and `min-width: 0;` on flex/grid children to prevent DOM reflow upon subresource resolution.
+- *Note on Core Web Vitals:* While laboratory runs observe zero layout reflows, field CLS under real-world device conditions is currently **unverified** due to the absence of CrUX field traffic.
 
 ### 3.3 Zero Render-Blocking Overhead
 - Scripts are loaded at the very bottom of `<body>` before closing tag:

@@ -5,7 +5,7 @@
 **Reference Portal:** `https://cet.iitp.ac.in/`  
 **Mock Repository:** `https://github.com/ayushcmd/iitp-cet-mock.git`  
 **Deployment Target:** Vercel Static Hosting (Root Domain)  
-**Evaluated Branch:** `test/site-wide-quality-audit`
+**Evaluated Branch:** `fix/post-qa-verification`
 
 ---
 
@@ -26,7 +26,7 @@ This Visual Fidelity Audit evaluates all 18 pages of the unofficial educational 
 - **Desktop Nav**:
   - Horizontal menu bar with hover/focus-within dropdown menus.
   - Two-tier nested flyouts (`Academics -> Program ▶ -> B.Tech / M.Tech / BBA`).
-  - Active route pill indicator (`#fb7906` orange background with white text for active page).
+  - Active route pill indicator (`#fb7906` orange background with high-contrast `#002147` deep navy text for active page to meet WCAG 2.2 AA 5.99:1 contrast).
   - External links marked with `↗` glyphs.
 - **Mobile Navigation**:
   - Offcanvas drawer sliding in from left (`width: 320px; max-width: 85vw; background: #003360`).
