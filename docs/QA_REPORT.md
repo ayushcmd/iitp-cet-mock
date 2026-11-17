@@ -84,8 +84,9 @@ Automated responsive testing was conducted across 6 standard viewport widths usi
 
 *Note: The ~15px difference between viewport width and body width accounts for the standard browser vertical scrollbar gutter.*
 
-### Table Responsiveness
-Academic timetables, re-exam matrices, holiday calendars, and service charges tables are enclosed in `.table-responsive` wrappers. On screen widths below `768px`, table content scrolls smoothly within its dedicated container (`overflow-x: auto`), strictly preventing page-level document stretching.
+### Table & Grid Container Responsiveness
+- **Table Responsiveness**: Academic timetables, re-exam matrices, holiday calendars, and service charges tables are enclosed in `.table-responsive` wrappers. On screen widths below `768px`, table content scrolls smoothly within its dedicated container (`overflow-x: auto`), strictly preventing page-level document stretching.
+- **Card & Grid Clamping**: Added `min-width: 0;` across content column wrappers and constrained `.bonafide-grid` to `repeat(auto-fit, minmax(min(100%, 280px), 1fr))` with `box-sizing: border-box` to eliminate edge-case horizontal overflow on 320px ultra-compact mobile viewports.
 
 ---
 
